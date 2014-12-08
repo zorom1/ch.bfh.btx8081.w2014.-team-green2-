@@ -1,0 +1,1 @@
+$wnd.ch_bfh_btx8081_w2014_TeamGreen2_MHCPMS_AppWidgetSet.runAsyncCallback2('T8(457,1,pkd);_.vc=function V_b(){jRb((!cRb&&(cRb=new oRb),cRb),this.b.e)};Red(Vh)(2);\n//# sourceURL=ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.AppWidgetSet-2.js\n')
