@@ -31,7 +31,7 @@ import com.vaadin.ui.UI;
 
 public class MyVaadinUI extends UI {
 	@WebServlet(value = "/*", asyncSupported = true)
-    @VaadinServletConfiguration(productionMode = false, ui = MyVaadinUI.class, widgetset = "ch.bfh.btx8081.w2014.Green.MHCPMS.AppWidgetSet")
+    @VaadinServletConfiguration(productionMode = false, ui = MyVaadinUI.class, widgetset = "ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.AppWidgetSet")
     public static class Servlet extends VaadinServlet {
     }
 	
