@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SecUIDSecPW date="31.12.01">
+	<SecUID name="A10">
+		<SecuPW>Lau123</SecuPW>
+	</SecUID>
+	<SecUID name="A11">
+		<SecuPW>No157</SecuPW>
+	</SecUID>
+	<SecUID name="A12">
+		<SecuPW>129jk</SecuPW>
+	</SecUID>
+	<SecUID name="A13">
+		<SecuPW>lidk4</SecuPW>
+	</SecUID>
+	<SecUID name="A14">
+		<SecuPW>hho111</SecuPW>
+	</SecUID>
+	<SecUID name="A15">
+		<SecuPW>ikr384</SecuPW>
+	</SecUID>
+	<SecUID name="A16">
+		<SecuPW>dunno2</SecuPW>
+	</SecUID>
+	<SecUID name="A17">
+		<SecuPW>yea1right</SecuPW>
+	</SecUID>
+	<SecUID name="A18">
+		<SecuPW>1me6</SecuPW>
+	</SecUID>
+	<SecUID name="A19">
+		<SecuPW>i3o</SecuPW>
+	</SecUID>
+</SecUIDSecPW>
