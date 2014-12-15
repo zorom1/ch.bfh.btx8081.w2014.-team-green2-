@@ -6,12 +6,22 @@ package ch.bfh.btx8081.w2014.TeamGreen2.Modeldata;
 
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Patient extends Person {
 
+	@XmlAttribute
 	private String PID=null;
+	@XmlElement(name="Birthday")
 	private String Birthday=null;
+	@XmlElement(name="Insurance")
 	private String Insurance=null; 
+	@XmlElement(name="Address")
 	private Address address=null;
+	
  Patient(){
 	  }
  Patient(String FirstName, String LastName,char Gender,Address address, String PID,
@@ -19,6 +29,7 @@ public class Patient extends Person {
 	 super(FirstName, LastName, Gender);
 	 this.PID=PID;
 	 this.address=address;
+	 
 	 this.Birthday=Birthday;
 	 this.Insurance=Insurance;
  }

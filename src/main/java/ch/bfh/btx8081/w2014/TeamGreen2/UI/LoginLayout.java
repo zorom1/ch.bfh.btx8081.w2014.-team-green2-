@@ -1,5 +1,6 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.UI;
 import java.io.File;
+import ch.bfh.btx8081.w2014.TeamGreen2.Controller.LogAuthor;
 
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.BorderPanel;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
@@ -18,6 +19,7 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
+//import 
 
 /**
 * Following class provides the Login View 
@@ -36,7 +38,7 @@ public class LoginLayout extends BorderPanel {
 	private TextField user;
 	private PasswordField password; 
 	private Label space;
-	
+	private String MyResult=null;
 	
 	
 	public LoginLayout() {
@@ -82,7 +84,7 @@ public class LoginLayout extends BorderPanel {
 		vertlayout.addComponent(createHomeViewButton());
 		vertlayout.setComponentAlignment(IndexButton, Alignment.BOTTOM_CENTER);
 		
-		
+		//private String MyLog="A12";
 		
 		forlayout.addComponent(vertlayout);
 		forlayout.setSizeFull();
@@ -110,10 +112,35 @@ public class LoginLayout extends BorderPanel {
 		IndexButton.addStyleName("big");
 		IndexButton.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID =1L;
+		     //logAuthor.CheckAcces(MyLog,MyPassw);
+
+			
 			public void buttonClick(ClickEvent event) {
+				
+			final String MyLog=user.getValue();	
+			final String MyPass=password.getValue();
+			LogAuthor logAuthor= new LogAuthor();
+			logAuthor.CheckAcces(MyLog,MyPass);
+			 
+			MyResult=logAuthor.getResult();
+			
+				if (MyResult=="true"){
 				MyVaadinUI.setHomeView(new HomeView());
+				
+			}
+				else{//MyVaadinUI.setLoginView(new LoginView());
+				
+				}
 			}
 		});
+			//else
+		//{public void buttonClick(ClickEvent event) {
+				//MyVaadinUI.setHomeView(new HomeView());
+		//logAuthor.CheckAcces(MyLog,MyPassw);
+				
+			//}
+		
+		
 		return IndexButton;
 	}
 }
