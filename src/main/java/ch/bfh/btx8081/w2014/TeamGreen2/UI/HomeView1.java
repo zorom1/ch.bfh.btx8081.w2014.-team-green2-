@@ -15,7 +15,7 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.themes.BaseTheme;
 
 
-public class HomeView extends VerticalLayout implements View{
+public class HomeView1 extends VerticalLayout implements View{
 	/**
 	 * 
 	 */
@@ -31,7 +31,7 @@ public class HomeView extends VerticalLayout implements View{
     private Button diagnosisButton;
     private Button exitButton;
   
-public HomeView()
+public HomeView1()
 {
    VerticalLayout layout= new VerticalLayout();
    	layout.setSizeFull();

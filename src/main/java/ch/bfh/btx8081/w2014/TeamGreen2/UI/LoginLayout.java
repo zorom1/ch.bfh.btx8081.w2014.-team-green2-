@@ -1,8 +1,9 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.UI;
-
 import java.io.File;
 
-import ch.bfh.btx8081.w2014.TeamGreen2.Gui.BorderPanel;
+import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.BorderPanel;
+import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
+import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeLayout; 
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
 
 import com.vaadin.server.FileResource;

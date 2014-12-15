@@ -1,4 +1,4 @@
-package ch.bfh.btx8081.w2014.TeamGreen2.Gui;
+package ch.bfh.btx8081.w2014.TeamGreen2.HomeView;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.ui.Panel;
@@ -11,7 +11,7 @@ public class BorderPanel extends Panel{
 	private static final String HEIGHT = "800px";
 
 	public BorderPanel(){
-		addStyleName("v-panel-borderpanel");
+		addStyleName("");
 		this.setWidth(WIDTH);
 		this.setHeight(HEIGHT);
 	}

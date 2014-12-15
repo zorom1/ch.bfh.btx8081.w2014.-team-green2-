@@ -2,10 +2,14 @@ package ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS;
 
 
 
+
 import javax.servlet.annotation.WebServlet;
 
-import ch.bfh.btx8081.w2014.TeamGreen2.UI.HomeView;
+
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.LoginView;
+import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
+import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeLayout; 
+
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.navigator.Navigator;
