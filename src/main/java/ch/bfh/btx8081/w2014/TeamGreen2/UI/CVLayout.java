@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import ch.bfh.btx8081.w2014.TeamGreen2.Gui.BorderPanel;
+import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.BorderPanel;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
 
