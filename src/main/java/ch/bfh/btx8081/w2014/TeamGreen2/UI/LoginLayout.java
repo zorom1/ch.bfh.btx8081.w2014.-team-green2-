@@ -1,7 +1,7 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.UI;
 import java.io.File;
-import ch.bfh.btx8081.w2014.TeamGreen2.Controller.LogAuthor;
 
+import ch.bfh.btx8081.w2014.TeamGreen2.Controller.LogAuthor;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.BorderPanel;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeLayout; 
@@ -15,6 +15,7 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
@@ -112,7 +113,7 @@ public class LoginLayout extends BorderPanel {
 		IndexButton.addStyleName("big");
 		IndexButton.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID =1L;
-		     //logAuthor.CheckAcces(MyLog,MyPassw);
+		 
 
 			
 			public void buttonClick(ClickEvent event) {
@@ -126,21 +127,24 @@ public class LoginLayout extends BorderPanel {
 			
 				if (MyResult=="true"){
 				MyVaadinUI.setHomeView(new HomeView());
-				
+				//State1();
 			}
 				else{//MyVaadinUI.setLoginView(new LoginView());
-				
+				Notification.show("Login is not correct.");
 				}
+				
 			}
 		});
-			//else
-		//{public void buttonClick(ClickEvent event) {
-				//MyVaadinUI.setHomeView(new HomeView());
-		//logAuthor.CheckAcces(MyLog,MyPassw);
-				
-			//}
-		
-		
+											
 		return IndexButton;
 	}
+	//@Override
+	//public void State1(){
+	//MyVaadinUI.setHomeView(new HomeView());
+	//}
+	
+	//@Override
+		//public void State2(){
+		//
+		//}
 }
