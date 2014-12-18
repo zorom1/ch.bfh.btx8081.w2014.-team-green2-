@@ -73,15 +73,11 @@ public class LoginLayout extends BorderPanel {
 		vertlayout.addComponent(this.loginicon);
 		vertlayout.setComponentAlignment(this.loginicon, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(this.userid);
-//		vertlayout.setComponentAlignment(this.userid, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(this.user);
-//		vertlayout.setComponentAlignment(this.user, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(this.pw);
-//		vertlayout.setComponentAlignment(this.pw, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(this.password);
-//		vertlayout.setComponentAlignment(this.password, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(this.space);
-//		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
+		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(createHomeViewButton());
 		vertlayout.setComponentAlignment(IndexButton, Alignment.BOTTOM_CENTER);
 		

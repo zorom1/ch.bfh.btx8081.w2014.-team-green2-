@@ -32,6 +32,8 @@ public class TimelineLayout extends BorderPanel {
 	private Image timelinepreview;
 	private Panel panel;
 	private Label space;
+	private Label space1;
+	private Label space2;
 	private Button exitbutton;
 
 	
@@ -44,9 +46,11 @@ public class TimelineLayout extends BorderPanel {
 		// Find the application directory
 		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 		this.timelinepreview.setIcon(new FileResource(new File(basepath + "/META-INF/ExampleTimeLine.png")));
-		this.timelinepreview.setWidth("500px");
+		this.timelinepreview.setSizeFull();
 		this.linkTimeline = new Link("Download & View Timeline", new ExternalResource("http://medicaltimeline.jimdo.com/app/download/10876697625/Example+Timeline+Jane+Smith.xlsx?t=1417863942"));
 		this.space = new Label("");
+		this.space1 = new Label("");
+		this.space2 = new Label("");
 		this.panel = new Panel();
 		this.panel.setStyleName("borderless");
 		this.panel.setSizeFull();
@@ -56,10 +60,11 @@ public class TimelineLayout extends BorderPanel {
 		vertlayout.addComponent(this.title);
 		vertlayout.setComponentAlignment(this.title, Alignment.TOP_CENTER);
 		vertlayout.addComponent(this.space);
+		vertlayout.setComponentAlignment(this.space, Alignment.TOP_CENTER);
 		vertlayout.addComponent(this.timelinepreview);
-		vertlayout.addComponent(this.space);
+		vertlayout.addComponent(this.space1);
 		vertlayout.addComponent(this.linkTimeline);
-		vertlayout.addComponent(this.space);
+		vertlayout.addComponent(this.space2);
 		vertlayout.addComponent(createHomeViewButton());
 
 		forlayout.addComponent(vertlayout);
