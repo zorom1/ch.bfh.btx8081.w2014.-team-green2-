@@ -68,6 +68,7 @@ public Table createTable() {
 	
 	// Show exactly the currently contained rows (items)
 	table.setPageLength(table.size());
+	table.setSizeFull();
 	
 	return table;
 	
