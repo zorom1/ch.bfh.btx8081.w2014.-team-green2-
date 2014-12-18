@@ -2,14 +2,12 @@ package ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS;
 
 
 
-
 import javax.servlet.annotation.WebServlet;
 
-
-import ch.bfh.btx8081.w2014.TeamGreen2.UI.LoginView;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
-import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeLayout; 
-
+import ch.bfh.btx8081.w2014.TeamGreen2.UI.CVView;
+import ch.bfh.btx8081.w2014.TeamGreen2.UI.LoginView;
+import ch.bfh.btx8081.w2014.TeamGreen2.UI.TimelineView;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.navigator.Navigator;
@@ -47,7 +45,37 @@ public class MyVaadinUI extends UI
 		navigator.addView("HomeView", homeview);
     	navigator.navigateTo("HomeView");
 	}
+    
+    public static void setCVView(CVView cvview) {
+		cvview.setImmediate(true);
+		navigator.addView("CVView", cvview);
+    	navigator.navigateTo("CVView");
+	}
+    
+    public static void setTimelineView(TimelineView timelineview) {
+		timelineview.setImmediate(true);
+		navigator.addView("TimelineView", timelineview);
+    	navigator.navigateTo("TimelineView");
+	}
 }
+
+//@Override
+//protected void init(VaadinRequest request) {   	
+//	getPage().setTitle("MHCPMSGreen");    	
+//	navigator = new Navigator(this, this);    	
+//	TimelineView timelineview = new TimelineView();
+//	navigator.addView("Timeline", timelineview);
+//	navigator.navigateTo("Timeline"); 	
+//}
+
+//@Override
+//protected void init(VaadinRequest request) {   	
+//	getPage().setTitle("MHCPMSGreen");    	
+//	navigator = new Navigator(this, this);    	
+//	CVView CVview = new CVView();
+//	navigator.addView("CV", CVview);
+//	navigator.navigateTo("CV"); 	
+//}
 
 //@Theme("mytheme")
 //@SuppressWarnings("serial")
