@@ -1,6 +1,6 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.UI;
 import java.io.File;
-
+import ch.bfh.btx8081.w2014.TeamGreen2.Controller.StatePatternInterface;
 import ch.bfh.btx8081.w2014.TeamGreen2.Controller.LogAuthor;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.BorderPanel;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
@@ -27,7 +27,7 @@ import com.vaadin.ui.VerticalLayout;
 * 
 */
 
-public class LoginLayout extends BorderPanel {
+public class LoginLayout extends BorderPanel implements StatePatternInterface {
 	
 	private static final long serialVersionUID = 1L;
 	private Button IndexButton;
@@ -122,8 +122,8 @@ public class LoginLayout extends BorderPanel {
 			MyResult=logAuthor.getResult();
 			
 				if (MyResult=="true"){
-				MyVaadinUI.setHomeView(new HomeView());
-				//State1();
+				//MyVaadinUI.setHomeView(new HomeView());
+				State1();
 			}
 				else{//MyVaadinUI.setLoginView(new LoginView());
 				Notification.show("Login is not correct.");
@@ -134,13 +134,21 @@ public class LoginLayout extends BorderPanel {
 											
 		return IndexButton;
 	}
-	//@Override
-	//public void State1(){
-	//MyVaadinUI.setHomeView(new HomeView());
-	//}
+	@Override
+	public void State1(){
+	MyVaadinUI.setHomeView(new HomeView());
+	}
 	
-	//@Override
-		//public void State2(){
-		//
-		//}
+	@Override
+		public void State2(){
+		
+		}
+	@Override
+	public void State3(){
+	
+	}
+	@Override
+	public void State4(){
+	
+	}
 }
