@@ -9,10 +9,11 @@ private String Phone =null;
 
 Address(){
 	}
-	Address(String aStreet, String aCity, int aPcode, String Phone){
+public Address(String aStreet, String aCity, int aPcode){
 		Street=aStreet;
 		City=aCity;
 		Pcode=aPcode;
+		
 		
 		
 	}
