@@ -74,6 +74,8 @@ public class CVLayout extends BorderPanel {
 		datefield.setImmediate(true);
 		datefield.setTimeZone(TimeZone.getTimeZone("UTC"));
 		datefield.setLocale(Locale.GERMANY);
+		// Display only year, month, and day in ISO format
+		datefield.setDateFormat("yyyy-MM");
 
 		// RichTextArea
 		this.textinput = new TextArea();
@@ -200,10 +202,10 @@ public class CVLayout extends BorderPanel {
 		cvtable.addContainerProperty("Event",  String.class, null);
 
 		// Add a few other rows using shorthand addItem()
-		cvtable.addItem(new Object[]{"1991", "Death of Mother"}, 1);
-		cvtable.addItem(new Object[]{"1995", "Brother jumped from Bridge, survived"}, 2);
-		cvtable.addItem(new Object[]{"2000", "Married John Smith, police sergeant"}, 3);
-		cvtable.addItem(new Object[]{"2012", "Death of husband, John Smith, local shooting"}, 4);
+		cvtable.addItem(new Object[]{"1991-05", "Death of Mother"}, 1);
+		cvtable.addItem(new Object[]{"1995-03", "Brother jumped from Bridge, survived"}, 2);
+		cvtable.addItem(new Object[]{"2000-12", "Married John Smith, police sergeant"}, 3);
+		cvtable.addItem(new Object[]{"2012-09", "Death of husband, John Smith, local shooting"}, 4);
 		cvtable.sort();
 		
 		// Handle the header clicks
