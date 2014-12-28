@@ -73,11 +73,15 @@ public class LoginLayout extends BorderPanel implements StatePatternInterface {
 		vertlayout.addComponent(this.loginicon);
 		vertlayout.setComponentAlignment(this.loginicon, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(this.userid);
+//		vertlayout.setComponentAlignment(this.userid, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(this.user);
+//		vertlayout.setComponentAlignment(this.user, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(this.pw);
+//		vertlayout.setComponentAlignment(this.pw, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(this.password);
+//		vertlayout.setComponentAlignment(this.password, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(this.space);
-		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
+//		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(createHomeViewButton());
 		vertlayout.setComponentAlignment(IndexButton, Alignment.BOTTOM_CENTER);
 		
@@ -94,8 +98,6 @@ public class LoginLayout extends BorderPanel implements StatePatternInterface {
 	 * 
 	 * @return username 
 	 */
-
-	
 	
 	
 	/**
@@ -137,6 +139,7 @@ public class LoginLayout extends BorderPanel implements StatePatternInterface {
 	@Override
 	public void State1(){
 	MyVaadinUI.setHomeView(new HomeView());
+	//	MyVaadinUI.setCaseView(new CaseView());
 	}
 	
 	@Override
