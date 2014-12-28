@@ -12,15 +12,16 @@ public class Case {
 	private String StartDay=null;
     private String Description=null;
 	
-		private ArrayList<String> medication=new ArrayList<String>();
+		//private ArrayList<String> medication=new ArrayList<String>();
 		private ArrayList<String> diagnosis=new ArrayList<String>();
 		/*Shall we make List of Diagnosis? :
 		 * private ArrayList<Diagnose> diagnoseList= new ArrayList<Diagnose>();
 		 * 
 		 */
 		private ArrayList<Diagnose> diagnoseList= new ArrayList<Diagnose>();
-		private ArrayList<Medication> medicationList= new ArrayList<Medication>();
-	Case(int CaseNb, String PID, String StartDay , String Description){
+		//private ArrayList<Medication> medicationList= new ArrayList<Medication>();
+		
+	public Case(int CaseNb, String PID, String StartDay , String Description){
 		this.CaseNb=CaseNb;
 		
 		this.PID=PID;
@@ -66,12 +67,7 @@ public class Case {
 		public  ArrayList<String> getDiagnose(){
 			return this.diagnosis;
 		}
-		public void addMedication(String medication) {
-			this.medication.add(medication);
-			if(medication==null){
-				throw new IllegalArgumentException();}
-	
-		}
+		
 }
 	
 

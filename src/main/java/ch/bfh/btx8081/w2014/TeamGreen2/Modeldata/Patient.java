@@ -21,10 +21,11 @@ public class Patient extends Person {
 	private String Insurance=null; 
 	@XmlElement(name="Address")
 	private Address address=null;
+
 	
  Patient(){
 	  }
- Patient(String FirstName, String LastName,char Gender,Address address, String PID,
+ Patient(String FirstName, String LastName,String Gender,Address address, String PID,
 		 String Birthday, String Insurance){
 	 super(FirstName, LastName, Gender);
 	 this.PID=PID;
@@ -33,6 +34,8 @@ public class Patient extends Person {
 	 this.Birthday=Birthday;
 	 this.Insurance=Insurance;
  }
+
+ 
  public String getPID(){
 	 return PID;
  }
@@ -59,7 +62,7 @@ public class Patient extends Person {
  }
  @Override
 	public String toString() {
-		return String.format("%s, %d, %s", super.toString(), address.toString(), PID,
+		return String.format("%s, %d, %s", super.toString(), address.toString(), PID, 
 					Birthday, Insurance);
 	}
 
