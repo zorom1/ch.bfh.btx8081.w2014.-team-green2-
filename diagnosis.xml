@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alldiagnosis>
+    <Diagnose caseNb="c34" patNb="p25">
+        <Diagnose>Angina</Diagnose>
+        <Treatment>Antibiotics</Treatment>
+        <medication>Aspirin</medication>
+        <medication>Pantoprazol</medication>
+    </Diagnose>
+    <Diagnose caseNb="c34" patNb="p25">
+        <Diagnose>Angina</Diagnose>
+        <Treatment>Antibiotics</Treatment>
+        <medication>Aspirin</medication>
+        <medication>Pantoprazol</medication>
+    </Diagnose>
+    <Diagnose caseNb="c34" patNb="p25">
+        <Diagnose>Angina</Diagnose>
+        <Treatment>Antibiotics</Treatment>
+        <medication>Aspirin</medication>
+        <medication>Pantoprazol</medication>
+    </Diagnose>
+</alldiagnosis>
