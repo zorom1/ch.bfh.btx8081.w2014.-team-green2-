@@ -1,5 +1,7 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.Database_XML;
-
+/*super class for class Patients, creates a structure of
+ * nodes Patient(with file Patient) for patients.xml
+ */
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -48,6 +50,6 @@ public abstract class Person {
 		
 		@Override
 		public String toString() {
-			return String.format("%s, %s", FirstName, LastName,Gender);
+			return ( getFirstName()+" "+getLastName()+" "+getGender());
 		}	
 		}
