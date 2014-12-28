@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.CVView;
+import ch.bfh.btx8081.w2014.TeamGreen2.UI.CaseView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.LoginView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.TimelineView;
 
@@ -57,6 +58,11 @@ public class MyVaadinUI extends UI
 		navigator.addView("TimelineView", timelineview);
     	navigator.navigateTo("TimelineView");
 	}
+    public static void setCaseView(CaseView caseview){
+    	caseview.setImmediate(true);
+    	navigator.addView("CaseView", caseview);
+    	navigator.navigateTo("CaseView");
+    }
 }
 
 //@Override
