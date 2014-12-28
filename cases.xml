@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<allcases>
+    <Case caseNb="25" pid="p25" uid="d24">
+        <StartDate>23.11.2014</StartDate>
+        <EndDate>28.11.2014</EndDate>
+        <Description>Depression</Description>
+    </Case>
+    <Case caseNb="28" pid="p34" uid="d23">
+        <StartDate>20.12.2014</StartDate>
+        <EndDate>28.12.2014</EndDate>
+        <Description>Depression</Description>
+    </Case>
+</allcases>
