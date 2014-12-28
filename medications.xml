@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<allMedications>
+    <Medication patientNb="p25" caseNb="c14">
+        <Diagnose>Angina</Diagnose>
+        <Treatment>Antibiotics</Treatment>
+        <Medication>Amoxicillin</Medication>
+        <Dosage>1g/200</Dosage>
+    </Medication>
+    <Medication patientNb="p28" caseNb="c23">
+        <Diagnose>Angina</Diagnose>
+        <Treatment>Antibiotics</Treatment>
+        <Medication>Amoxicillin</Medication>
+        <Dosage>1g/200</Dosage>
+    </Medication>
+    <Medication patientNb="p25" caseNb="c14">
+        <Diagnose>Angina</Diagnose>
+        <Treatment>Antibiotics</Treatment>
+        <Medication>Amoxicillin</Medication>
+        <Dosage>1g/200</Dosage>
+    </Medication>
+    <Medication patientNb="p25" caseNb="c14">
+        <Diagnose>Angina</Diagnose>
+        <Treatment>Antibiotics</Treatment>
+        <Medication>Amoxicillin</Medication>
+        <Dosage>1g/200</Dosage>
+    </Medication>
+</allMedications>
