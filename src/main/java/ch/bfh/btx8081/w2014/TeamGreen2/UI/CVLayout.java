@@ -1,15 +1,6 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.UI;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-import java.text.DateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
 
@@ -17,16 +8,13 @@ import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.BorderPanel;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
 
-import com.vaadin.data.Item;
 import com.vaadin.data.Property;
 import com.vaadin.data.Property.ValueChangeEvent;
-import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Label;
-import com.vaadin.ui.Notification;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.PopupDateField;
 import com.vaadin.ui.Table;
@@ -146,52 +134,28 @@ public class CVLayout extends BorderPanel {
 						String date = (String) event.getProperty()
 								.getValue();
 						
-						// HOW ADD DATE?
-						// HOW WRITE NEW LINE IN TXT FIELD EVERYTIME?
+						
+						// HOW TO ADD DATE IN DB?
 					
 					}
 		
 				});
-				textinput.addValueChangeListener(new Property.ValueChangeListener() {
+				
+				textinput
+						.addValueChangeListener(new Property.ValueChangeListener() {
 							public void valueChange(ValueChangeEvent event) {
 								String value = (String) event.getProperty()
 										.getValue();
-								
-								Writer writer = null;
-								String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
-								try {
-								    writer = new BufferedWriter(new OutputStreamWriter(
-								          new FileOutputStream(new File(basepath + "/META-INF/Patient1.txt"))));
-								    writer.write("Text:" + value);
-								} catch (IOException ex) {
-								  // report
-								} finally {
-								   try {writer.close();} catch (Exception ex) {}
-								}
+
+								// HOW TO ADD EVENT IN DB?
+
 							}
 
 						});
-				
-				//------------------
-//				datefield.addValueChangeListener(new Property.ValueChangeListener() {
-//					public void valueChange(ValueChangeEvent event) {
-//						String date = (String) event.getProperty()
-//								.getValue();
-//
-//						Label not = new Label("Date is: " + date);
-//						
-//					}
-//
-//				});
-				//------------------
-				
-				
 			}
-			
+
 		});
-
 		return savebutton;
-
 	}
 	
 	public Table CVTable() {
