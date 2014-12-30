@@ -32,6 +32,12 @@ public class CaseLayout extends BorderPanel implements StatePatternInterface{
 	private static final long serialVersionUID = 1L;
 	private Button IndexButton;
 	private Label label;
+	private Label label1;
+	private Label label2;
+	private Label label3;
+	private Label label4;
+	private Label label5;
+	private Label label6;
 	private TextField patNb;
 	private TextField caseNb;
 	private TextField doctorUID;
@@ -52,9 +58,18 @@ public class CaseLayout extends BorderPanel implements StatePatternInterface{
 public CaseLayout() {
 		this.label = new Label("Cases of Patients");
 		this.label.setWidth(null);
+		this.label1 = new Label("PID");
+		
+		this.label2 = new Label("Case Number");
+	    this.caseNb = new TextField();
+		this.label3 = new Label("Doctor's ID");
+		this.label4 = new Label("Date of begin");
+		this.label5 = new Label("Date of the end");
+		this.label6 = new Label("Description of the case");
 		this.doctorUID = new TextField();
 		this.patNb = new TextField();
 		this.startDate = new TextField();
+		this.endDate =new TextField();
 		this.description = new TextField();
 		this.space = new Label("");
 		
@@ -65,23 +80,29 @@ public CaseLayout() {
 		FormLayout forlayout = new FormLayout();
 		vertlayout.addComponent(this.label);
 		vertlayout.setComponentAlignment(this.label, Alignment.TOP_CENTER);
+		vertlayout.addComponent(this.label1);
+		//vertlayout.setComponentAlignment(this.label1, Alignment.TOP_CENTER);
 		vertlayout.addComponent(this.patNb);
-		vertlayout.setComponentAlignment(this.patNb, Alignment.MIDDLE_CENTER);
-		patNb.setValue("PID");
-		//vertlayout.addComponent(this.caseNb);
-		//vertlayout.setComponentAlignment(this.caseNb, Alignment.BOTTOM_CENTER);
-		//caseNb.setValue("Number of case");
-		//vertlayout.addComponent(this.doctorUID);
-		//vertlayout.addComponent(this.startDate);
-		//vertlayout.addComponent(this.endDate);
-		//vertlayout.addComponent(this.description);
-		//vertlayout.addComponent(this.space);
-		//vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
+		vertlayout.addComponent(this.label2);
+		//vertlayout.setComponentAlignment(this.patNb, Alignment.MIDDLE_CENTER);
+		
+		vertlayout.addComponent(this.caseNb);
+		vertlayout.addComponent(this.label3);
+		vertlayout.addComponent(this.doctorUID);
+		vertlayout.addComponent(this.label4);
+		vertlayout.addComponent(this.startDate);
+		vertlayout.addComponent(this.label5);
+		vertlayout.addComponent(this.endDate);
+		vertlayout.addComponent(this.label6);
+		vertlayout.addComponent(this.description);
+		vertlayout.addComponent(this.space);
+		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(createHomeViewButton());
 		//vertlayout.setComponentAlignment(IndexButton, Alignment.BOTTOM_CENTER);
 		
-	//	vertlayout.addComponent(createNewCaseButton());
-	//	vertlayout.setComponentAlignment(IndexButton2, Alignment.BOTTOM_CENTER);
+		vertlayout.addComponent(createNewCaseButton());
+		
+		//vertlayout.setComponentAlignment(IndexButton2, Alignment.BOTTOM_CENTER);
 	//	vertlayout.addComponent(createLookForCaseButton());
 	//	vertlayout.setComponentAlignment(IndexButton3, Alignment.BOTTOM_CENTER);
 
@@ -106,6 +127,19 @@ private Button createHomeViewButton() {
 	return IndexButton;
 }
 
+private Button createNewCaseButton() {
+	IndexButton2 = new Button("NewCase");
+		IndexButton2.addStyleName("big");
+		IndexButton2.addClickListener(new Button.ClickListener() {
+			private static final long serialVersionUID =1L;
+			public void buttonClick(ClickEvent event) {
+				State2();
+			}
+		});
+											
+		return IndexButton2;
+		
+}
 
 	@Override
 	public void State1(){
