@@ -16,6 +16,7 @@ import com.vaadin.ui.Component;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.Panel;
 //import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
@@ -44,10 +45,11 @@ public class CaseLayout extends BorderPanel implements StatePatternInterface{
 	private TextField startDate;
 	private TextField endDate;
 	private TextField description;
-		private Label space;
+    private Label space;
 	private Panel panel;
 	private Button IndexButton2;
 	private Button IndexButton3;
+	private Button IndexButton4;
 	private String PatNb=null;
 	private String CaseNb=null;
 	private String DoctorNb=null;
@@ -98,13 +100,16 @@ public CaseLayout() {
 		vertlayout.addComponent(this.space);
 		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(createHomeViewButton());
-		//vertlayout.setComponentAlignment(IndexButton, Alignment.BOTTOM_CENTER);
 		
+		vertlayout.addComponent(this.space);
+		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(createNewCaseButton());
 		
-		//vertlayout.setComponentAlignment(IndexButton2, Alignment.BOTTOM_CENTER);
-	//	vertlayout.addComponent(createLookForCaseButton());
-	//	vertlayout.setComponentAlignment(IndexButton3, Alignment.BOTTOM_CENTER);
+		vertlayout.addComponent(createReadyButton());
+		vertlayout.addComponent(this.space);
+		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
+		vertlayout.addComponent(createLookForCaseButton());
+		vertlayout.setComponentAlignment(IndexButton3, Alignment.BOTTOM_CENTER);
 
 		
 		forlayout.addComponent(vertlayout);
@@ -113,6 +118,18 @@ public CaseLayout() {
 		setContent(panel);
 
 	}	
+
+private Button createLookForCaseButton() {
+	IndexButton3 = new Button("Find");
+	IndexButton3.addStyleName("big");
+	IndexButton3.addClickListener(new Button.ClickListener() {
+		private static final long serialVersionUID =1L;
+		public void buttonClick(ClickEvent event) {
+			State4();
+		}
+	});
+	return IndexButton3;
+}
 
 private Button createHomeViewButton() {
 	IndexButton = new Button("Home");
@@ -126,6 +143,17 @@ private Button createHomeViewButton() {
 										
 	return IndexButton;
 }
+private Button createReadyButton(){
+	IndexButton4 = new Button("Ready");
+	IndexButton4.addStyleName("big");
+	IndexButton4.addClickListener(new Button.ClickListener() {
+		private static final long serialVersionUID =1L;
+		public void buttonClick(ClickEvent event) {
+			State2();
+		}
+	});
+	return IndexButton4;
+}
 
 private Button createNewCaseButton() {
 	IndexButton2 = new Button("NewCase");
@@ -133,7 +161,7 @@ private Button createNewCaseButton() {
 		IndexButton2.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID =1L;
 			public void buttonClick(ClickEvent event) {
-				State2();
+				State3();
 			}
 		});
 											
@@ -161,13 +189,14 @@ private Button createNewCaseButton() {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		Notification.show("Done");
 		}
 	@Override
 	public void State3(){
-	
+		Notification.show("Give in text filds data, when finished, press Ready Button");
 	}
 	@Override
 	public void State4(){
-	
+		MyVaadinUI.setFindCaseView(new FindCaseView());
 	}
 }
