@@ -20,9 +20,13 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
 
 /**
-* Following class provides the Timeline View 
-* 
-*/
+ * The Following Class provides a View of the external medical events of the Patient. 
+ * The data is written in an Excel-File which is placed on an external timeline-server (here simulated with
+ * the website medicaltimeline.jimdo.com. The doctor can download that external Excel-File and see all the
+ * medical events of the Patient that have occured.
+ * @author JD
+ *
+ */
 
 public class TimelineLayout extends BorderPanel {
 	
@@ -33,9 +37,12 @@ public class TimelineLayout extends BorderPanel {
 	private Panel panel;
 	private Label space;
 	private Label space1;
-	private Label space2;
 	private Button exitbutton;
 
+	/**
+	 * This method implements the layout and the link of the timeline, with a preview of the timeline,
+	 * here simulated with a screenshot.
+	 */
 	
 	public TimelineLayout() {
 		
@@ -43,14 +50,12 @@ public class TimelineLayout extends BorderPanel {
 		this.title.setWidth(null);
 		this.timelinepreview = new Image();
 		
-		// Find the application directory
 		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 		this.timelinepreview.setIcon(new FileResource(new File(basepath + "/META-INF/ExampleTimeLine.png")));
-		this.timelinepreview.setSizeFull();
 		this.linkTimeline = new Link("Download & View Timeline", new ExternalResource("http://medicaltimeline.jimdo.com/app/download/10876697625/Example+Timeline+Jane+Smith.xlsx?t=1417863942"));
+		
 		this.space = new Label("");
 		this.space1 = new Label("");
-		this.space2 = new Label("");
 		this.panel = new Panel();
 		this.panel.setStyleName("borderless");
 		this.panel.setSizeFull();
@@ -62,9 +67,8 @@ public class TimelineLayout extends BorderPanel {
 		vertlayout.addComponent(this.space);
 		vertlayout.setComponentAlignment(this.space, Alignment.TOP_CENTER);
 		vertlayout.addComponent(this.timelinepreview);
-		vertlayout.addComponent(this.space1);
 		vertlayout.addComponent(this.linkTimeline);
-		vertlayout.addComponent(this.space2);
+		vertlayout.addComponent(this.space1);
 		vertlayout.addComponent(createHomeViewButton());
 
 		forlayout.addComponent(vertlayout);
@@ -74,7 +78,7 @@ public class TimelineLayout extends BorderPanel {
 	}
 	
 	/**
-	 * Creates the "Exit" Button to enter the application.
+	 * Creates the "Exit" Button to exit the application and return to the HomeView.
 	 * 
 	 * @return Button
 	 */
