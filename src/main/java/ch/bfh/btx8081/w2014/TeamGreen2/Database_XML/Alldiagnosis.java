@@ -4,11 +4,13 @@ package ch.bfh.btx8081.w2014.TeamGreen2.Database_XML;
  * Diagnose from Array List diagnosis to diagnosis.xml and back
  */
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Diagnose;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -17,6 +19,10 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+
+import org.xml.sax.SAXException;
 
 
 
@@ -65,10 +71,10 @@ private void save(String filename)throws FileNotFoundException{
 		e.printStackTrace();
 	}	
 }
-//private static Schema readXmlSchema(String filename) throws SAXException{
-//	SchemaFactory schemaFactory= SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-//return schemaFactory.newSchema(new File(filename));
-//}
+private static Schema readXmlSchema(String filename) throws SAXException{
+	SchemaFactory schemaFactory= SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+return schemaFactory.newSchema(new File(filename));
+}
 public static Alldiagnosis load(String filename){
 	try{
 		Unmarshaller u =context2.createUnmarshaller();

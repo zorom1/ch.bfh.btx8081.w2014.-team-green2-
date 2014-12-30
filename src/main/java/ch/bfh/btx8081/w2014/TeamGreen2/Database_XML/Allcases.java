@@ -8,6 +8,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -16,6 +17,10 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+
+import org.xml.sax.SAXException;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -73,10 +78,10 @@ public class Allcases {
 			}	
 			
 		}
-	  //  private static Schema readXmlSchema(String filename) throws SAXException{
-	  //	SchemaFactory schemaFactory= SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-		//return schemaFactory.newSchema(new File(filename));
-	//}
+	    private static Schema readXmlSchema(String filename) throws SAXException{
+	  	SchemaFactory schemaFactory= SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		return schemaFactory.newSchema(new File(filename));
+	}
 	    public static Allcases load(String filename){
 	    	try{
 	    		Unmarshaller u =context.createUnmarshaller();

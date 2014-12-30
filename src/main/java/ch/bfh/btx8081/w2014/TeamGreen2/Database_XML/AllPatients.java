@@ -88,10 +88,10 @@ public class AllPatients {
 			}	
 			
 		}
-	  //  private static Schema readXmlSchema(String filename) throws SAXException{
-	  //	SchemaFactory schemaFactory= SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-		//return schemaFactory.newSchema(new File(filename));
-	//}
+	    private static Schema readXmlSchema(String filename) throws SAXException{
+	  	SchemaFactory schemaFactory= SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		return schemaFactory.newSchema(new File(filename));
+	}
 			/*method load takes records from xml.file and move them to Array List Patients
 			 * 
 			 */
