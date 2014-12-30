@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<allPatients>
+    <Patients pid="a28">
+        <FNname>Gino</FNname>
+        <LNname>Wyss</LNname>
+        <Gender>m</Gender>
+        <Address>
+            <city>MyCity</city>
+            <pcode>3006</pcode>
+            <street>MyStreet</street>
+        </Address>
+        <Birthday>21.06.1967</Birthday>
+        <Insurance>Insurance3</Insurance>
+    </Patients>
+    <Patients pid="m45">
+        <FNname>Anna</FNname>
+        <LNname>Hofer</LNname>
+        <Gender>f</Gender>
+        <Address>
+            <city>MyCity</city>
+            <pcode>3006</pcode>
+            <street>MyStreet</street>
+        </Address>
+        <Birthday>23.04.1976</Birthday>
+        <Insurance>Arcosana</Insurance>
+    </Patients>
+    <Patients pid="a44">
+        <FNname>Rene</FNname>
+        <LNname>Meier</LNname>
+        <Gender>m</Gender>
+        <Address>
+            <city>MyCity</city>
+            <pcode>3006</pcode>
+            <street>MyStreet</street>
+        </Address>
+        <Birthday>2.10.1952</Birthday>
+        <Insurance>Insurance1</Insurance>
+    </Patients>
+    <Patients pid="a22">
+        <FNname>Stephan</FNname>
+        <LNname>Wyss</LNname>
+        <Gender>m</Gender>
+        <Address>
+            <city>MyCity</city>
+            <pcode>3006</pcode>
+            <street>MyStreet</street>
+        </Address>
+        <Birthday>12.09.1986</Birthday>
+        <Insurance>Insurance2</Insurance>
+    </Patients>
+    <Patients pid="a28">
+        <FNname>Gino</FNname>
+        <LNname>Wyss</LNname>
+        <Gender>m</Gender>
+        <Address>
+            <city>MyCity</city>
+            <pcode>3006</pcode>
+            <street>MyStreet</street>
+        </Address>
+        <Birthday>21.06.1967</Birthday>
+        <Insurance>Insurance3</Insurance>
+    </Patients>
+    <Patients pid="m45">
+        <FNname>Anna</FNname>
+        <LNname>Hofer</LNname>
+        <Gender>f</Gender>
+        <Address>
+            <city>MyCity</city>
+            <pcode>3006</pcode>
+            <street>MyStreet</street>
+        </Address>
+        <Birthday>23.04.1976</Birthday>
+        <Insurance>Arcosana</Insurance>
+    </Patients>
+    <Patients pid="a44">
+        <FNname>Rene</FNname>
+        <LNname>Meier</LNname>
+        <Gender>m</Gender>
+        <Address>
+            <city>MyCity</city>
+            <pcode>3006</pcode>
+            <street>MyStreet</street>
+        </Address>
+        <Birthday>2.10.1952</Birthday>
+        <Insurance>Insurance1</Insurance>
+    </Patients>
+    <Patients pid="a22">
+        <FNname>Stephan</FNname>
+        <LNname>Wyss</LNname>
+        <Gender>m</Gender>
+        <Address>
+            <city>MyCity</city>
+            <pcode>3006</pcode>
+            <street>MyStreet</street>
+        </Address>
+        <Birthday>12.09.1986</Birthday>
+        <Insurance>Insurance2</Insurance>
+    </Patients>
+    <Patients pid="a28">
+        <FNname>Gino</FNname>
+        <LNname>Wyss</LNname>
+        <Gender>m</Gender>
+        <Address>
+            <city>MyCity</city>
+            <pcode>3006</pcode>
+            <street>MyStreet</street>
+        </Address>
+        <Birthday>21.06.1967</Birthday>
+        <Insurance>Insurance3</Insurance>
+    </Patients>
+    <Patients pid="m45">
+        <FNname>Anna</FNname>
+        <LNname>Hofer</LNname>
+        <Gender>f</Gender>
+        <Address>
+            <city>MyCity</city>
+            <pcode>3006</pcode>
+            <street>MyStreet</street>
+        </Address>
+        <Birthday>23.04.1976</Birthday>
+        <Insurance>Arcosana</Insurance>
+    </Patients>
+    <Patients pid="a44">
+        <FNname>Rene</FNname>
+        <LNname>Meier</LNname>
+        <Gender>m</Gender>
+        <Address>
+            <city>MyCity</city>
+            <pcode>3006</pcode>
+            <street>MyStreet</street>
+        </Address>
+        <Birthday>2.10.1952</Birthday>
+        <Insurance>Insurance1</Insurance>
+    </Patients>
+    <Patients pid="a22">
+        <FNname>Stephan</FNname>
+        <LNname>Wyss</LNname>
+        <Gender>m</Gender>
+        <Address>
+            <city>MyCity</city>
+            <pcode>3006</pcode>
+            <street>MyStreet</street>
+        </Address>
+        <Birthday>12.09.1986</Birthday>
+        <Insurance>Insurance2</Insurance>
+    </Patients>
+    <Patients pid="a28">
+        <FNname>Gino</FNname>
+        <LNname>Wyss</LNname>
+        <Gender>m</Gender>
+        <Address>
+            <city>MyCity</city>
+            <pcode>3006</pcode>
+            <street>MyStreet</street>
+        </Address>
+        <Birthday>21.06.1967</Birthday>
+        <Insurance>Insurance3</Insurance>
+    </Patients>
+     <Patients pid="123-456-789">
+        <FNname>Jane</FNname>
+        <LNname>Smith</LNname>
+        <Gender>w</Gender>
+        <Address>
+            <city>Furchtikon</city>
+            <pcode>4566</pcode>
+            <street>Grüssenstrasse 33</street>
+        </Address>
+        <Birthday>21.06.1967</Birthday>
+        <Insurance>Insurance3</Insurance>
+     <!--  <cv> -->
+        <date>1991-05</date>
+			<event>Death of Mother</event>
+		<date>1995-03</date>
+			<event>Brother jumped from Bridge, survived</event>
+		<date>2000-12</date>
+			<event>Married John Smith, police sergeant</event>
+		<date>2012-09</date>
+			<event>Death of husband, John Smith, local shooting</event>
+		<!--  </cv> -->
+    </Patients>
+     <Patients pid="987-654-321">
+        <FNname>Patrick</FNname>
+        <LNname>Beispiel</LNname>
+        <Gender>m</Gender>
+        <Address>
+            <city>Bensikon</city>
+            <pcode>5566</pcode>
+            <street>Hauerstrasse 3</street>
+        </Address>
+        <Birthday>02.03.1955</Birthday>
+        <Insurance>Insurance3</Insurance>
+     <!--  <cv> -->
+       <date>1993-05</date>
+			<event>Birth of Son (John)</event>
+		<date>1998-03</date>
+			<event>Death of Wife while giving birth to second son (Peter)</event>
+		<date>2005-12</date>
+			<event>Son has to leave school (reason of bullying)</event>
+		<date>2014-04</date>
+			<event>Son (John) leaves to Alaska (no contact since then)</event>
+		<!--  </cv> -->
+    </Patients>
+</allPatients>
