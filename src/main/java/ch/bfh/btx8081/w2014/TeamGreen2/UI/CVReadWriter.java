@@ -33,7 +33,7 @@ public class CVReadWriter {
 	
 	/**
 	 * Methods to read the Patient-Database. Here simulated with an XML-File and a 
-	 * dummy Patient (Jane Smith).
+	 * dummy Patient (Jane Smith and Patrick Beispiel).
 	 * @param filename
 	 * @throws JDOMException
 	 * @throws IOException
@@ -61,7 +61,7 @@ public class CVReadWriter {
 		
 		Document doc;
 		try {
-			doc = new CVReadWriter().createJDOMviaSAX("janesmithcv.xml");
+			doc = new CVReadWriter().createJDOMviaSAX("patients.xml");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return;
@@ -69,19 +69,38 @@ public class CVReadWriter {
 		
 		Element root = doc.getRootElement();
 
-		// Retrieve the first "Patient" element
-		Element jane = root.getChild("patient");
-
 		/**
-		 * The methods checks if there are any dates and events in the patients-record.
-		 * It reads these informations and shows them in the Console.
+		 * The methods checks if there are any dates and events in the
+		 * patients-record. It reads these informations and shows them in the
+		 * Console.
 		 */
 		
-		Iterator<Element> janedate = jane.getChildren("date").iterator();
-		Iterator<Element> janeevent = jane.getChildren("event").iterator();
-		while (janedate.hasNext() && janeevent.hasNext()) {
-			System.out.println(janedate.next().getText() + " " + janeevent.next().getText());
+		String pid1 = "123-456-789";
+		String pid2 = "987-654-321";
+		
+		Iterator<Element> patIter = root.getChildren("Patients").iterator();
+		while (patIter.hasNext()) {
+			Element pat = patIter.next();
+			if (pat.getAttribute("pid").getValue().compareTo(pid1) == 0) {
+			//if (pat.getAttribute("name").getValue().compareTo(pid2) == 0) {
+			
+				Iterator<Element> date = pat.getChildren("date").iterator();
+				Iterator<Element> event = pat.getChildren("event").iterator();
+				while (date.hasNext() && event.hasNext()) {
+					System.out.println(date.next().getText() + " "
+							+ event.next().getText());
+					
+				}
+
+			}
+
 		}
+		
+		
+		
+		
+		///---------------------------------------------------------------------------------/////
+		
 		
 		/**
 		 * This method adds a new date with the reffered life-event to a specific patient.
@@ -97,6 +116,7 @@ public class CVReadWriter {
 				root.addContent(date);
 				break; //done
 			}
+		
 		}
 		
 		/**
