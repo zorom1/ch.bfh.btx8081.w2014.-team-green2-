@@ -4,6 +4,7 @@ package ch.bfh.btx8081.w2014.TeamGreen2.Database_XML;
 */
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,12 +41,17 @@ public class AllPatients {
  * 		
  */
 		public static List<Patient> patients=null;
-		
+		/* the variable Status defines what exactly 
+		 * we do : put new record in patients.xml or just read
+		 * a current contain of patients.xml 
+		 */
+		public static String Status="newRecord";
 		
 		public AllPatients(){
 			patients= new ArrayList<Patient>();
 		}
 		/*method which adds new record of type Patient
+		 * to Array List which will be transformed to patients.xml
 		 		 */
 		public static void addPatient(Patient patient){
 			patients.add(patient);
@@ -53,22 +59,24 @@ public class AllPatients {
 		}
 			public static void makeSerial(Patient patient) throws FileNotFoundException  {
 			Patient myPatient =patient;
-					
+			PrintWriter outpatient= new PrintWriter("patients.txt");		
 				AllPatients allPatients=new AllPatients();
 				
 					AllPatients.load("patiens.xml");
+				/*if we need to add new record to xml file
+				 */
+					if (Status=="newRecord") {
 					addPatient(myPatient);
+					allPatients.save("patiens.xml");
+					}
 		//loop shows contain of array List,
 		//in form To String, can be used later for sending data to PatientView			
-					for (int i=1; i<=patients.size()-1;i++){
-						
-						System.out.println(patients.get(i));
+					for (int i=0; i<=patients.size()-1;i++){
+						//System.out.println(patients.get(i));		
+				        outpatient.println(patients.get(i));
 					}
-	/*here new record in, before serialization in xml.file
-	 				 */
-			addPatient(myPatient);
-			allPatients.save("patiens.xml");
-		
+	
+					outpatient.close();
 		}
 			/*method save bring renewed array list in xml.file
 			 * 
