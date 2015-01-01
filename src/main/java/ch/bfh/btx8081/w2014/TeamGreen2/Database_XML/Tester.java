@@ -25,25 +25,25 @@ public class Tester {
 		AllPatients allPatients = new AllPatients();
    Patient patient = new Patient(myPID, myLastName, myFirstName,address,myGender,myBirthday,myInsurance);
    
-      
+ //AllPatients.Status="new";   
     AllPatients.makeSerial(patient);
      Patient patient3= new Patient("a44","Meier","Rene",address,"m","2.10.1952","Insurance1");
-     AllPatients.makeSerial(patient3);
+     //AllPatients.makeSerial(patient3);
      Patient patient4= new Patient("a22", "Wyss","Stephan", address,"m","12.09.1986","Insurance2");
      AllPatients.makeSerial(patient4);
      Patient patient5= new Patient("a28", "Wyss","Gino", address,"m","21.06.1967","Insurance3");
      AllPatients.makeSerial(patient5);
     Case myCase=new Case("25","p25","d24","23.11.2014","28.11.2014","Depression"); 
-    Allcases.makeSerial(myCase);
+    //Allcases.makeSerial(myCase);
     Diagnose mydiagnose= new Diagnose("Angina","c34","p25","Antibiotics");
     Drug="Aspirin";
     mydiagnose.addMedication(Drug);
     Drug="Pantoprazol";
     mydiagnose.addMedication(Drug);
    
-    Alldiagnosis.makeSerial(mydiagnose);
+    //Alldiagnosis.makeSerial(mydiagnose);
     Medication newmedication = new Medication("p25","c14","Angina","Antibiotics","Amoxicillin","1g/200");
-    AllMedications.makeSerial(newmedication);
+    //AllMedications.makeSerial(newmedication);
     
 	}
 
