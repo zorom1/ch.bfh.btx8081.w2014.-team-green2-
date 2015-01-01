@@ -1,31 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <allPatients>
-    <Patients pid="a28">
-        <FNname>Gino</FNname>
-        <LNname>Wyss</LNname>
-        <Gender>m</Gender>
-        <Address>
-            <city>MyCity</city>
-            <pcode>3006</pcode>
-            <street>MyStreet</street>
-        </Address>
-        <Birthday>21.06.1967</Birthday>
-        <Insurance>Insurance3</Insurance>
-    </Patients>
-    <Patients pid="m45">
-        <FNname>Anna</FNname>
-        <LNname>Hofer</LNname>
-        <Gender>f</Gender>
-        <Address>
-            <city>MyCity</city>
-            <pcode>3006</pcode>
-            <street>MyStreet</street>
-        </Address>
-        <Birthday>23.04.1976</Birthday>
-        <Insurance>Arcosana</Insurance>
-    </Patients>
-    <Patients pid="a44">
+    <Patient pid="a44">
         <FNname>Rene</FNname>
         <LNname>Meier</LNname>
         <Gender>m</Gender>
@@ -36,32 +11,8 @@
         </Address>
         <Birthday>2.10.1952</Birthday>
         <Insurance>Insurance1</Insurance>
-    </Patients>
-    <Patients pid="a22">
-        <FNname>Stephan</FNname>
-        <LNname>Wyss</LNname>
-        <Gender>m</Gender>
-        <Address>
-            <city>MyCity</city>
-            <pcode>3006</pcode>
-            <street>MyStreet</street>
-        </Address>
-        <Birthday>12.09.1986</Birthday>
-        <Insurance>Insurance2</Insurance>
-    </Patients>
-    <Patients pid="a28">
-        <FNname>Gino</FNname>
-        <LNname>Wyss</LNname>
-        <Gender>m</Gender>
-        <Address>
-            <city>MyCity</city>
-            <pcode>3006</pcode>
-            <street>MyStreet</street>
-        </Address>
-        <Birthday>21.06.1967</Birthday>
-        <Insurance>Insurance3</Insurance>
-    </Patients>
-    <Patients pid="m45">
+    </Patient>
+    <Patient pid="m45">
         <FNname>Anna</FNname>
         <LNname>Hofer</LNname>
         <Gender>f</Gender>
@@ -72,20 +23,8 @@
         </Address>
         <Birthday>23.04.1976</Birthday>
         <Insurance>Arcosana</Insurance>
-    </Patients>
-    <Patients pid="a44">
-        <FNname>Rene</FNname>
-        <LNname>Meier</LNname>
-        <Gender>m</Gender>
-        <Address>
-            <city>MyCity</city>
-            <pcode>3006</pcode>
-            <street>MyStreet</street>
-        </Address>
-        <Birthday>2.10.1952</Birthday>
-        <Insurance>Insurance1</Insurance>
-    </Patients>
-    <Patients pid="a22">
+    </Patient>
+    <Patient pid="a22">
         <FNname>Stephan</FNname>
         <LNname>Wyss</LNname>
         <Gender>m</Gender>
@@ -96,8 +35,8 @@
         </Address>
         <Birthday>12.09.1986</Birthday>
         <Insurance>Insurance2</Insurance>
-    </Patients>
-    <Patients pid="a28">
+    </Patient>
+    <Patient pid="a28">
         <FNname>Gino</FNname>
         <LNname>Wyss</LNname>
         <Gender>m</Gender>
@@ -108,53 +47,5 @@
         </Address>
         <Birthday>21.06.1967</Birthday>
         <Insurance>Insurance3</Insurance>
-    </Patients>
-    <Patients pid="m45">
-        <FNname>Anna</FNname>
-        <LNname>Hofer</LNname>
-        <Gender>f</Gender>
-        <Address>
-            <city>MyCity</city>
-            <pcode>3006</pcode>
-            <street>MyStreet</street>
-        </Address>
-        <Birthday>23.04.1976</Birthday>
-        <Insurance>Arcosana</Insurance>
-    </Patients>
-    <Patients pid="a44">
-        <FNname>Rene</FNname>
-        <LNname>Meier</LNname>
-        <Gender>m</Gender>
-        <Address>
-            <city>MyCity</city>
-            <pcode>3006</pcode>
-            <street>MyStreet</street>
-        </Address>
-        <Birthday>2.10.1952</Birthday>
-        <Insurance>Insurance1</Insurance>
-    </Patients>
-    <Patients pid="a22">
-        <FNname>Stephan</FNname>
-        <LNname>Wyss</LNname>
-        <Gender>m</Gender>
-        <Address>
-            <city>MyCity</city>
-            <pcode>3006</pcode>
-            <street>MyStreet</street>
-        </Address>
-        <Birthday>12.09.1986</Birthday>
-        <Insurance>Insurance2</Insurance>
-    </Patients>
-    <Patients pid="a28">
-        <FNname>Gino</FNname>
-        <LNname>Wyss</LNname>
-        <Gender>m</Gender>
-        <Address>
-            <city>MyCity</city>
-            <pcode>3006</pcode>
-            <street>MyStreet</street>
-        </Address>
-        <Birthday>21.06.1967</Birthday>
-        <Insurance>Insurance3</Insurance>
-    </Patients>
+    </Patient>
 </allPatients>
