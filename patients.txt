@@ -1,0 +1,4 @@
+Rene Meier m  MyStreet MyCity 3006  a44 2.10.1952 Insurance1
+Anna Hofer f  MyStreet MyCity 3006  m45 23.04.1976 Arcosana
+Stephan Wyss m  MyStreet MyCity 3006  a22 12.09.1986 Insurance2
+Gino Wyss m  MyStreet MyCity 3006  a28 21.06.1967 Insurance3
