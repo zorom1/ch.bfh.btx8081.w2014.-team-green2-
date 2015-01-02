@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2014.TeamGreen2.HomeView;
 
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.CVView;
+import ch.bfh.btx8081.w2014.TeamGreen2.UI.CaseView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.TimelineView;
 
 import com.vaadin.ui.Alignment;
@@ -22,6 +23,7 @@ public class HomeLayout extends BorderPanel {
 	private Label space1;
 	private Button cvbutton;
 	private Button timelinebutton;
+	private Button casebutton;
 	
 public HomeLayout() {
 	
@@ -42,6 +44,7 @@ public HomeLayout() {
 	vertlayout.addComponent(createTable());
 	vertlayout.addComponent(createCVViewButton());
 	vertlayout.addComponent(createTimelineViewButton());
+	vertlayout.addComponent(createCaseButton());
 
 	forlayout.addComponent(vertlayout);
 	forlayout.setSizeFull();
@@ -96,6 +99,19 @@ public Button createTimelineViewButton() {
 		}
 	});
 	return timelinebutton;
+}
+public Button createCaseButton(){
+	casebutton= new Button("Case");
+	casebutton.addClickListener(new Button.ClickListener() {
+		private static final long serialVersionUID = 1L;
+
+		public void buttonClick(ClickEvent event) {
+		//	MyVaadinUI.setTimelineView(new TimelineView());
+			MyVaadinUI.setCaseView(new CaseView());	
+		}	
+		
+	});
+	return casebutton;
 }
 	
 
