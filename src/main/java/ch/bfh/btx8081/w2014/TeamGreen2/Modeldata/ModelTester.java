@@ -6,7 +6,7 @@ public class ModelTester {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	Address address= new Address("Matterstr. 4", "Bern",3006);
+	Address address= new Address("Matterstr. 4", "Bern","postcode");
 		Patient patient =new Patient("Rene","Meier", 
 								"m",address,"P25", "23.09.1965","Arcosana");
 		Doctor doctor= new Doctor("Beat","Merz","m","D55");

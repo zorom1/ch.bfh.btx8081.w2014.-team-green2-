@@ -21,7 +21,7 @@ public class Tester {
 		final String myGender="f";
 		final String myBirthday="23.04.1976";
 		final String myInsurance="Arcosana";
-		Address address = new Address("MyStreet","MyCity", 3006);
+		Address address = new Address("MyStreet","MyCity","postcode");
 		AllPatients allPatients = new AllPatients();
    Patient patient = new Patient(myPID, myLastName, myFirstName,address,myGender,myBirthday,myInsurance);
    

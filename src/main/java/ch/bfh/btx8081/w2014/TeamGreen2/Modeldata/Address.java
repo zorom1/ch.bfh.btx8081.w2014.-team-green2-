@@ -3,13 +3,13 @@ package ch.bfh.btx8081.w2014.TeamGreen2.Modeldata;
 public class Address {
 	private String Street=null;
 	private String City=null;
-	private int Pcode=0;
+	private String Pcode=null;
 	
 
 
 	Address(){
 		}
-	public Address(String aStreet, String aCity, int aPcode){
+	public Address(String aStreet, String aCity, String aPcode){
 			Street=aStreet;
 			City=aCity;
 			Pcode=aPcode;			
@@ -27,10 +27,10 @@ public class Address {
 	public void setCity(String City){
 		this.City=City;
 	}
-	public int getPcode(){
-		return Pcode;
+	public String getPcode(){
+		return Pcode; 
 	}
-	public void setPcode(int Pcode){
+	public void setPcode(String Pcode){
 		this.Pcode=Pcode;
 	}	
 	
