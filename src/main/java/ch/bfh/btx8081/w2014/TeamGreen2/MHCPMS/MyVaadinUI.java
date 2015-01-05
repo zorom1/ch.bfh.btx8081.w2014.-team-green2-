@@ -5,6 +5,7 @@ package ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS;
 import javax.servlet.annotation.WebServlet;
 
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
+import ch.bfh.btx8081.w2014.TeamGreen2.UI.AddNewPatientView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.CVView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.CaseView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.FindCaseView;
@@ -47,6 +48,12 @@ public class MyVaadinUI extends UI
 		navigator.addView("HomeView", homeview);
     	navigator.navigateTo("HomeView");
 	}
+    
+    public static void setAddNewPatientView(AddNewPatientView addnewpatientview){
+    	addnewpatientview.setImmediate(true);
+    	navigator.addView("AddNewPatientView", addnewpatientview);
+    	navigator.navigateTo("AddNewPatientView");
+    }
     
     public static void setCVView(CVView cvview) {
 		cvview.setImmediate(true);
