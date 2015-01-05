@@ -1,6 +1,7 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.HomeView;
 
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
+import ch.bfh.btx8081.w2014.TeamGreen2.UI.AddNewPatientView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.CVView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.CaseView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.TimelineView;
@@ -24,6 +25,7 @@ public class HomeLayout extends BorderPanel {
 	private Button cvbutton;
 	private Button timelinebutton;
 	private Button casebutton;
+	private Button addnewpatientbutton; 
 	
 public HomeLayout() {
 	
@@ -45,6 +47,7 @@ public HomeLayout() {
 	vertlayout.addComponent(createCVViewButton());
 	vertlayout.addComponent(createTimelineViewButton());
 	vertlayout.addComponent(createCaseButton());
+	vertlayout.addComponent(createNewPatientButton());
 
 	forlayout.addComponent(vertlayout);
 	forlayout.setSizeFull();
@@ -113,7 +116,21 @@ public Button createCaseButton(){
 	});
 	return casebutton;
 }
-	
+
+public Button createNewPatientButton(){
+	addnewpatientbutton = new Button("Add new Patient");
+	addnewpatientbutton.addClickListener(new Button.ClickListener() {
+		private static final long serialVersionUID = 1L;
+
+		public void buttonClick(ClickEvent event) {
+		//	MyVaadinUI.setTimelineView(new TimelineView());
+			MyVaadinUI.setAddNewPatientView(new AddNewPatientView());	
+		}	
+		
+	});
+	return addnewpatientbutton;
+}
+
 
 //	this.label = new Label("Patients");
 //	this.label.setWidth(null);
