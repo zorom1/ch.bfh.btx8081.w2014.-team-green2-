@@ -4,6 +4,8 @@ import java.io.File;
 
 
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Case;
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Allcases;
@@ -56,6 +58,7 @@ public class CaseLayout extends BorderPanel implements StatePatternInterface{
 	private String StartDate=null;
 	private String EndDate= null;
 	private String Description =null;
+	
 	
 public CaseLayout() {
 		this.label = new Label("Cases of Patients");
@@ -194,9 +197,37 @@ private Button createNewCaseButton() {
 	@Override
 	public void State3(){
 		Notification.show("Give in text filds data, when finished, press Ready Button");
+		try {
+			numberDefine();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
 	}
 	@Override
 	public void State4(){
 		MyVaadinUI.setFindCaseView(new FindCaseView());
+	}
+	private void numberDefine() throws FileNotFoundException{
+		File inputfile = new File("lastCaseNb.txt");
+		Scanner in = new Scanner(inputfile);
+		String lastNumber=in.next();
+		System.out.println(lastNumber);
+		String subnumber=lastNumber.substring(1,4);
+		System.out.println(subnumber);
+		int numb=Integer.parseInt(subnumber);
+		numb=numb+1;
+		lastNumber="c"+numb;;
+		int len=lastNumber.length();
+		if(len==3){
+		lastNumber="c"+"0"+numb;	
+		}
+		caseNb.setValue(lastNumber);
+		PrintWriter out= new PrintWriter("lastCaseNb.txt");
+		out.println(lastNumber);
+		out.close();
 	}
 }
