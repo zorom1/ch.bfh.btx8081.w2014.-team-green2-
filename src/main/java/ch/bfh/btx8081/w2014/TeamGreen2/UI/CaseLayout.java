@@ -211,6 +211,8 @@ private Button createNewCaseButton() {
 	public void State4(){
 		MyVaadinUI.setFindCaseView(new FindCaseView());
 	}
+	/*this function defines the available number for the next new case
+	 	 */
 	private void numberDefine() throws FileNotFoundException{
 		File inputfile = new File("lastCaseNb.txt");
 		Scanner in = new Scanner(inputfile);
