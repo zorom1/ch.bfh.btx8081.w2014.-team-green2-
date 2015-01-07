@@ -1,6 +1,7 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.HomeView;
 
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.AddNewPatientView;
@@ -28,7 +29,7 @@ public class HomeLayout extends BorderPanel {
 	private Button timelinebutton;
 	private Button casebutton;
 	private Button addnewpatientbutton; 
-
+public static String tableFlag ="0";
 public HomeLayout() {
 	
 	this.title = new Label("Home");
@@ -82,18 +83,27 @@ public Table createTable() {
 	 * 
 	 */
 	String [] temp_elem= new String[5];
+	if(tableFlag=="0"){
 	try {
+		//PrintWriter output1= new PrintWriter("sortpatients1.txt");
+		 // output1.close();
+		
 		TableElements.countElements();
 	} catch (FileNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
+	}
 	int ArraySize= TableElements.myElements.size();
 	int i=0;
+	/*variable k counts the lines in the table
+	 	 */
 	int k=1;
-	
+	/*array from 5 elements is one line of the table
+	 	 */
+	//if(tableFlag=="0"){
 	  while(i<ArraySize-1){
-		  for (int j=0;j<5;j++){
+		  for (int j=0;j<5  ;j++){
 			temp_elem[j] = TableElements.myElements.get(i); 
 		
 			i++;
@@ -105,13 +115,14 @@ public Table createTable() {
 table.addItem(new Object[]{temp_elem[j],temp_elem[j+1],temp_elem[j+2],temp_elem[j+3],temp_elem[j+4]},k);
 		  k++;
 	  }		
-	  k=1;
+	//}
 	 
 	table.setPageLength(table.size());
 	//table.setPageLength(3);
 	table.setSizeFull();
 	
 	return table;
+	
 	
 }
 
