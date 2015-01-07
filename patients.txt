@@ -1,4 +1,6 @@
-Rene Meier m  MyStreet MyCity 3006  a44 2.10.1952 Insurance1
-Anna Hofer f  MyStreet MyCity 3006  m45 23.04.1976 Arcosana
-Stephan Wyss m  MyStreet MyCity 3006  a22 12.09.1986 Insurance2
-Gino Wyss m  MyStreet MyCity 3006  a28 21.06.1967 Insurance3
+Meier Rene m  a44 2.10.1952
+Hofer Anna f  m45 23.04.1976
+Pahud Jana f  p554 29.09.1988
+Ampelio Gino m  p777 10.02.1968
+Blatter Patricia f  p025 14.04.1974
+
