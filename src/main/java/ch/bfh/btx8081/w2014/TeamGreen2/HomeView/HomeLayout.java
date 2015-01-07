@@ -1,5 +1,7 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.HomeView;
 
+import java.io.FileNotFoundException;
+
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.AddNewPatientView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.CVView;
@@ -26,7 +28,7 @@ public class HomeLayout extends BorderPanel {
 	private Button timelinebutton;
 	private Button casebutton;
 	private Button addnewpatientbutton; 
-	
+
 public HomeLayout() {
 	
 	this.title = new Label("Home");
@@ -43,7 +45,9 @@ public HomeLayout() {
 	vertlayout.setComponentAlignment(this.title, Alignment.TOP_CENTER);
 	vertlayout.addComponent(this.space);
 	vertlayout.setComponentAlignment(this.space, Alignment.TOP_CENTER);
+	
 	vertlayout.addComponent(createTable());
+	
 	vertlayout.addComponent(createCVViewButton());
 	vertlayout.addComponent(createTimelineViewButton());
 	vertlayout.addComponent(createCaseButton());
@@ -59,10 +63,10 @@ public Table createTable() {
 	Table table = new Table("");
 
 	// Define two columns for the built-in container
+	table.addContainerProperty("Name", String.class, null);
+	table.addContainerProperty("LastName",  String.class, null);
+	table.addContainerProperty("Gender", String.class, null);
 	table.addContainerProperty("PID", String.class, null);
-	table.addContainerProperty("Name",  String.class, null);
-	table.addContainerProperty("Firstname", String.class, null);
-	table.addContainerProperty("Sex", String.class, null);
 	table.addContainerProperty("Birthdate", String.class, null);
 
 	// Add a row the hard way
@@ -70,10 +74,41 @@ public Table createTable() {
 	//Item row1 = table.getItem(newItemId);
 
 	// Add a few other rows using shorthand addItem()
-	table.addItem(new Object[]{"12345678","Smith", "Jane", "female", "12.12.2014"}, 1);
+	//table.addItem(new Object[]{"12345678","Smith", "Jane", "female", "12.12.2014"}, 1);
 	
 	// Show exactly the currently contained rows (items)
+	
+	/*fill the Table on the HomeView with actual patients data
+	 * 
+	 */
+	String [] temp_elem= new String[5];
+	try {
+		TableElements.countElements();
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	int ArraySize= TableElements.myElements.size();
+	int i=0;
+	int k=1;
+	
+	  while(i<ArraySize-1){
+		  for (int j=0;j<5;j++){
+			temp_elem[j] = TableElements.myElements.get(i); 
+		
+			i++;
+		  }
+		  int j=0;
+/*filling Table with data from patients xml file according to toString
+  */
+
+table.addItem(new Object[]{temp_elem[j],temp_elem[j+1],temp_elem[j+2],temp_elem[j+3],temp_elem[j+4]},k);
+		  k++;
+	  }		
+	  k=1;
+	 
 	table.setPageLength(table.size());
+	//table.setPageLength(3);
 	table.setSizeFull();
 	
 	return table;
