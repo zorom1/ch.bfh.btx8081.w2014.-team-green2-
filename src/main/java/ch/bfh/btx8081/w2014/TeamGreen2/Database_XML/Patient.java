@@ -63,7 +63,8 @@ public class Patient extends Person {
 	}
 	@Override
 	public String toString(){
-		return (super.toString()+ " " +address.toString()+" "+getPID()+" "+getBirthday()+" "+ getInsurance()); 
+		//return (super.toString()+ " " +address.toString()+" "+getPID()+" "+getBirthday()+" "+ getInsurance()); 
+		return (super.toString()+ " "+" "+getPID()+" "+getBirthday()); 
 	}
 	}
 
