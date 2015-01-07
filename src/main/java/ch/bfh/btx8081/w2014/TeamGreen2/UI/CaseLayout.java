@@ -27,6 +27,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2014.TeamGreen2.Controller.StatePatternInterface;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.BorderPanel;
+import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeLayout;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
 
@@ -140,6 +141,7 @@ private Button createHomeViewButton() {
 	IndexButton.addClickListener(new Button.ClickListener() {
 		private static final long serialVersionUID =1L;
 		public void buttonClick(ClickEvent event) {
+		
 			State1();
 		}
 	});
@@ -174,6 +176,7 @@ private Button createNewCaseButton() {
 
 	@Override
 	public void State1(){
+		HomeLayout.tableFlag="1";
 	MyVaadinUI.setHomeView(new HomeView());
 	}
 	
