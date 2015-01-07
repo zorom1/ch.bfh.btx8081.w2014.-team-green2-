@@ -62,7 +62,7 @@ public class CVLayout extends BorderPanel {
 		datefield.setImmediate(true);
 		datefield.setTimeZone(TimeZone.getTimeZone("UTC"));
 		datefield.setLocale(Locale.GERMANY);
-		// Display only year, month, and day in ISO format
+		// Display only year and month in ISO format
 		datefield.setDateFormat("yyyy-MM");
 
 		// RichTextArea
@@ -186,7 +186,5 @@ public class CVLayout extends BorderPanel {
 		return cvtable;
 		
 	}
-	
-	
 	
 }
