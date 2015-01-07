@@ -24,28 +24,53 @@
         <Birthday>23.04.1976</Birthday>
         <Insurance>Arcosana</Insurance>
     </Patient>
-    <Patient pid="a22">
-        <FNname>Stephan</FNname>
-        <LNname>Wyss</LNname>
-        <Gender>m</Gender>
+    <Patient pid="p554">
+        <FNname>Jana</FNname>
+        <LNname>Pahud</LNname>
+        <Gender>f</Gender>
         <Address>
-            <city>MyCity</city>
-            <pcode>3006</pcode>
-            <street>MyStreet</street>
+            <city>Lyss</city>
+            <pcode>2233</pcode>
+            <street>Martiweg</street>
         </Address>
-        <Birthday>12.09.1986</Birthday>
-        <Insurance>Insurance2</Insurance>
+        <Birthday>29.09.1988</Birthday>
+        <Insurance>Arcosana</Insurance>
     </Patient>
-    <Patient pid="a28">
+    <Patient pid="p777">
         <FNname>Gino</FNname>
-        <LNname>Wyss</LNname>
+        <LNname>Ampelio</LNname>
         <Gender>m</Gender>
         <Address>
-            <city>MyCity</city>
+            <city>Bern</city>
             <pcode>3006</pcode>
-            <street>MyStreet</street>
+            <street>Fweg 5</street>
         </Address>
-        <Birthday>21.06.1967</Birthday>
-        <Insurance>Insurance3</Insurance>
+        <Birthday>10.02.1968</Birthday>
+        <Insurance>Visana</Insurance>
     </Patient>
+    <Patient pid="p025">
+        <FNname>Patricia</FNname>
+        <LNname>Blatter</LNname>
+        <Gender>f</Gender>
+        <Address>
+            <city>Bern</city>
+            <pcode>3029</pcode>
+            <street>Sulgenauweg 5</street>
+        </Address>
+        <Birthday>14.04.1974</Birthday>
+        <Insurance>Visana</Insurance>
+    </Patient>
+    <Patient pid="p222">
+        <FNname>Daniela</FNname>
+        <LNname>Blatter</LNname>
+        <Gender>f</Gender>
+        <Address>
+            <city>Bern</city>
+            <pcode>3029</pcode>
+            <street>Eigerplatz 3</street>
+        </Address>
+        <Birthday>22.03.1976</Birthday>
+        <Insurance>ccc</Insurance>
+    </Patient>
+    
 </allPatients>
