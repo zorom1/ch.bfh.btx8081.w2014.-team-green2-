@@ -52,7 +52,7 @@ public class TimelineLayout extends BorderPanel {
 		
 		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 		this.timelinepreview.setIcon(new FileResource(new File(basepath + "/META-INF/ExampleTimeLine.png")));
-		this.linkTimeline = new Link("Download & View Timeline", new ExternalResource("http://medicaltimeline.jimdo.com/app/download/10876697625/Example+Timeline+Jane+Smith.xlsx?t=1417863942"));
+		this.linkTimeline = new Link("Download & View Timeline", new ExternalResource("http://medicaltimeline.jimdo.com/app/download/10998507525/Example%20Timeline%20Jane%20Smith.xlsx?t=1420731065"));
 		
 		this.space = new Label("");
 		this.space1 = new Label("");
