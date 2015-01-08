@@ -1,5 +1,6 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.UI;
 import java.io.File;
+
 import ch.bfh.btx8081.w2014.TeamGreen2.Controller.StatePatternInterface;
 import ch.bfh.btx8081.w2014.TeamGreen2.Controller.LogAuthor;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.BorderPanel;
@@ -7,6 +8,8 @@ import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeLayout; 
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
 
+import com.vaadin.event.ShortcutAction.KeyCode;
+import com.vaadin.event.ShortcutListener;
 import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
@@ -109,6 +112,7 @@ public class LoginLayout extends BorderPanel implements StatePatternInterface {
 	public Button createHomeViewButton() {
 		IndexButton = new Button("Login");
 		IndexButton.addStyleName("big");
+		IndexButton.setClickShortcut(KeyCode.ENTER);
 		IndexButton.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID =1L;
 		 
