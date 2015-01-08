@@ -103,7 +103,7 @@ public CaseLayout() {
 		vertlayout.addComponent(this.description);
 		vertlayout.addComponent(this.space);
 		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
-		vertlayout.addComponent(createHomeViewButton());
+		
 		
 		vertlayout.addComponent(this.space);
 		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
@@ -114,7 +114,7 @@ public CaseLayout() {
 		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(createLookForCaseButton());
 		vertlayout.setComponentAlignment(IndexButton3, Alignment.BOTTOM_CENTER);
-
+		vertlayout.addComponent(createHomeViewButton());
 		
 		forlayout.addComponent(vertlayout);
 		forlayout.setSizeFull();
