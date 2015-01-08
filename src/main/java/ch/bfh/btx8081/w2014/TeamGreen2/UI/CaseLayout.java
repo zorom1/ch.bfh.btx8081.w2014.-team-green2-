@@ -10,6 +10,10 @@ import java.util.Scanner;
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Case;
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Allcases;
 
+import com.vaadin.client.ui.Field;
+import com.vaadin.data.Property.ValueChangeListener;
+import com.vaadin.event.FieldEvents.TextChangeListener;
+import com.vaadin.event.FieldEvents.TextChangeNotifier;
 import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
@@ -78,6 +82,16 @@ public CaseLayout() {
 		this.endDate =new TextField();
 		this.description = new TextField();
 		this.space = new Label("");
+		
+		
+		//Set all Textfields as required
+		this.caseNb.setRequired(true);
+		this.doctorUID.setRequired(true);
+		this.patNb.setRequired(true);
+		this.startDate.setRequired(true);
+		this.endDate.setRequired(true);
+		this.description.setRequired(true);
+		
 		
 		this.panel = new Panel();
 		this.panel.setStyleName("borderless");
@@ -154,22 +168,31 @@ private Button createHomeViewButton() {
 private Button createReadyButton(){
 	IndexButton4 = new Button("Save");
 	IndexButton4.addStyleName("big");
+	IndexButton4.setEnabled(false);
+
+//	public void formHasChanged() {
+//	    boolean allFieldsValid = fieldGroup.isValid();
+//	    IndexButton4.setEnabled(allFieldsValid);
+//	}
+//	
 	IndexButton4.addClickListener(new Button.ClickListener() {
 		private static final long serialVersionUID =1L;
 		public void buttonClick(ClickEvent event) {
 			State2();
+		
 		}
 	});
 	return IndexButton4;
 }
 
 private Button createNewCaseButton() {
-	IndexButton2 = new Button("Take next available");
+	IndexButton2 = new Button("Take next available Case Number");
 		IndexButton2.addStyleName("big");
 		IndexButton2.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID =1L;
 			public void buttonClick(ClickEvent event) {
 				State3();
+				IndexButton4.setEnabled(true);
 			}
 		});
 											
@@ -238,4 +261,25 @@ private Button createNewCaseButton() {
 		out.println(lastNumber);
 		out.close();
 	}
+//	TextChangeListener textListener = new TextChangeListener() {
+//	    @Override
+//	    public void textChange(TextChangeEvent event) {
+//	        formHasChanged();
+//	    }
+//	};
+//	
+//	ValueChangeListener valueListener = new ValueChangeListener() {
+//	    @Override
+//	    public void valueChange(ValueChangeEvent event) {
+//	        formHasChanged();
+//	    }
+//	};
+//
+//	for (Field f : fieldGroup.getFields()) {
+//	    if (f instanceof TextChangeNotifier) {
+//	        ((TextChangeNotifier) f).addTextChangeListener(textListener);
+//	    } else {
+//	        f.addValueChangeListener(valueListener);
+//	    }
+//	}
 }
