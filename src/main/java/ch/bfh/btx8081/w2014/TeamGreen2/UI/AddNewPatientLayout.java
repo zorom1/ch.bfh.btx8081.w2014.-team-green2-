@@ -79,8 +79,8 @@ public class AddNewPatientLayout extends BorderPanel implements
 		this.label.setWidth(null);
 		this.label1 = new Label("PID");
 		this.label2 = new Label("Last name");
-		this.label9 = new Label("First name");
-		this.label3 = new Label("Street");
+		this.label9 = new Label("Street");
+		this.label3 = new Label("First name");
 		this.label4 = new Label("City");
 		this.label5 = new Label("Postcode");
 		this.label6 = new Label("Gender");
