@@ -62,6 +62,8 @@ public class TableElements {
 	  }
 	
 	  in1.close();
+	 // PrintWriter output1= new PrintWriter("sortpatients1.txt");
+	  //output1.close();
 	return myElements;
 		
 	   }
