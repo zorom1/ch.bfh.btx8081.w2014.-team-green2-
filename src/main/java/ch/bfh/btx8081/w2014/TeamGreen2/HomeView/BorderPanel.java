@@ -12,8 +12,9 @@ public class BorderPanel extends Panel{
 
 	public BorderPanel(){
 		addStyleName("");
-		this.setWidth(WIDTH);
-		this.setHeight(HEIGHT);
+		this.setSizeFull();
+		//this.setWidth(WIDTH);
+		//this.setHeight(HEIGHT);
 	}
 	
 
