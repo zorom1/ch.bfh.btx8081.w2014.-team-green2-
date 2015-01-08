@@ -2,11 +2,14 @@ package ch.bfh.btx8081.w2014.TeamGreen2.UI;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.AllPatients;
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Case;
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Allcases;
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Patient;
+
 
 
 
@@ -123,7 +126,10 @@ public class AddNewPatientLayout extends BorderPanel implements
 		vertlayout.addComponent(this.label8);
 		vertlayout.addComponent(this.insurance);
 	
-
+		vertlayout.addComponent(createNextPid());
+		vertlayout.addComponent(this.space);
+		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
+		
 		vertlayout.addComponent(createReadyButton());
 		vertlayout.addComponent(this.space);
 		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
@@ -155,7 +161,21 @@ public class AddNewPatientLayout extends BorderPanel implements
 
 		return IndexButton;
 	}
+  
+	private Button createNextPid(){
+		IndexButton2 = new Button("Take next available PID");
+		IndexButton2.addStyleName("big");
+		IndexButton2.addClickListener(new Button.ClickListener() {
+			private static final long serialVersionUID = 1L;
 
+			public void buttonClick(ClickEvent event) {
+				State3();
+			}
+		});
+
+		return IndexButton2; 
+	
+	}
 
 	private Button createReadyButton() {
 		IndexButton4 = new Button("Save");
@@ -165,6 +185,7 @@ public class AddNewPatientLayout extends BorderPanel implements
 
 			public void buttonClick(ClickEvent event) {
 				State2();
+				
 			}
 		});
 		return IndexButton4;
@@ -205,11 +226,35 @@ System.out.println("Address="+address.getCity()+address.getStreet()+address.getP
 	@Override
 	public void State3() {
 		Notification
-				.show("Give in text filds data, when finished, press Ready Button");
+				.show("Next available PID");
+		try {
+			numberDefine();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();}
 	}
 
 	@Override
 	public void State4() {
 		MyVaadinUI.setFindCaseView(new FindCaseView());
 	}
+	private void numberDefine() throws FileNotFoundException{
+		File inputfile = new File("lastpatient.txt");
+		Scanner in = new Scanner(inputfile);
+		String lastNumber=in.next();
+		System.out.println(lastNumber);
+		String subnumber=lastNumber.substring(1,4);
+		System.out.println(subnumber);
+		int numb=Integer.parseInt(subnumber);
+		numb=numb+1;
+		lastNumber="p"+numb;;
+		int len=lastNumber.length();
+		if(len==3){
+		lastNumber="p"+"0"+numb;	
+		}
+		patId.setValue(lastNumber);
+		PrintWriter out= new PrintWriter("lastpatient.txt");
+		out.println(lastNumber);
+		out.close();
+}
 }
