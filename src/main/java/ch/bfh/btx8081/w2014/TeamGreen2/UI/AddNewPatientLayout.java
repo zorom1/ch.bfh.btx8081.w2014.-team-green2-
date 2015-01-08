@@ -1,14 +1,14 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.UI;
 
 import java.io.File;
-
 import java.io.FileNotFoundException;
 
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.AllPatients;
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Case;
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Allcases;
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Patient;
-import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Patients;
+
+
 
 import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinService;
@@ -27,6 +27,7 @@ import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2014.TeamGreen2.Controller.StatePatternInterface;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.BorderPanel;
+import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeLayout;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
 import ch.bfh.btx8081.w2014.TeamGreen2.Modeldata.Address;
@@ -171,6 +172,7 @@ public class AddNewPatientLayout extends BorderPanel implements
 
 	@Override
 	public void State1() {
+		HomeLayout.tableFlag="2";
 		MyVaadinUI.setHomeView(new HomeView());
 	}
 
