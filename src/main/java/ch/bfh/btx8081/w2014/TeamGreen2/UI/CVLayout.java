@@ -67,7 +67,8 @@ public class CVLayout extends BorderPanel {
 
 		// RichTextArea
 		this.textinput = new TextArea();
-		textinput.setValue("Type here the life event of the Patient you want to add.");
+		//textinput.setValue("Type here the life event of the Patient you want to add.");
+		textinput.setInputPrompt("Type here the life event of the Patient you want to add.");
 		textinput.setSizeFull();
 		textinput.setRows(2);
 		textinput.setImmediate(true);
