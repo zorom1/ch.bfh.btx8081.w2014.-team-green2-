@@ -102,19 +102,22 @@ public CaseLayout() {
 		vertlayout.addComponent(this.label6);
 		vertlayout.addComponent(this.description);
 		vertlayout.addComponent(this.space);
-		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
-		
+	
 		
 		vertlayout.addComponent(this.space);
 		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(createNewCaseButton());
 		
 		vertlayout.addComponent(createReadyButton());
-		vertlayout.addComponent(this.space);
 		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
+		vertlayout.addComponent(createHomeViewButton());
+		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
+		
+		vertlayout.addComponent(this.space);
+		
 		vertlayout.addComponent(createLookForCaseButton());
 		vertlayout.setComponentAlignment(IndexButton3, Alignment.BOTTOM_CENTER);
-		vertlayout.addComponent(createHomeViewButton());
+
 		
 		forlayout.addComponent(vertlayout);
 		forlayout.setSizeFull();
@@ -149,7 +152,7 @@ private Button createHomeViewButton() {
 	return IndexButton;
 }
 private Button createReadyButton(){
-	IndexButton4 = new Button("Ready");
+	IndexButton4 = new Button("Save");
 	IndexButton4.addStyleName("big");
 	IndexButton4.addClickListener(new Button.ClickListener() {
 		private static final long serialVersionUID =1L;
@@ -161,7 +164,7 @@ private Button createReadyButton(){
 }
 
 private Button createNewCaseButton() {
-	IndexButton2 = new Button("NewCase");
+	IndexButton2 = new Button("Take next available");
 		IndexButton2.addStyleName("big");
 		IndexButton2.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID =1L;
@@ -199,7 +202,7 @@ private Button createNewCaseButton() {
 		}
 	@Override
 	public void State3(){
-		Notification.show("Give in text filds data, when finished, press Ready Button");
+		Notification.show("Next available Case Number");
 		try {
 			numberDefine();
 		} catch (FileNotFoundException e) {
