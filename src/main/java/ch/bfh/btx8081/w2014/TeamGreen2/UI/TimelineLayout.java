@@ -39,7 +39,7 @@ public class TimelineLayout extends BorderPanel {
 	private Panel panel;
 	private Label space;
 	private Label space1;
-	private Button exitbutton;
+	private Button homebutton;
 
 	/**
 	 * This method implements the layout and the link of the timeline, with a preview of the timeline,
@@ -81,19 +81,19 @@ public class TimelineLayout extends BorderPanel {
 	}
 	
 	/**
-	 * Creates the "Exit" Button to exit the application and return to the HomeView.
+	 * Creates the "Home" Button to exit the application and return to the HomeView.
 	 * 
 	 * @return Button
 	 */
 	
 	public Button createHomeViewButton() {
-		exitbutton = new Button("Exit");
-		exitbutton.addClickListener(new Button.ClickListener() {
+		homebutton = new Button("Home");
+		homebutton.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID =1L;
 			public void buttonClick(ClickEvent event) {
 				MyVaadinUI.setHomeView(new HomeView());
 			}
 		});
-		return exitbutton;
+		return homebutton;
 	}
 }
