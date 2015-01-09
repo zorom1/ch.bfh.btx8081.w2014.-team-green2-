@@ -14,7 +14,6 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.FormLayout;
-import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.PopupDateField;
@@ -24,7 +23,10 @@ import com.vaadin.ui.TextArea;
 import com.vaadin.ui.VerticalLayout;
 
 /**
- * Following class provides the CV View
+ * Following class provides the Layout for the View of the Curriculum Vitae of a
+ * Patient. Here the doctor can choose a date and type in the information that
+ * is relevant according to his sessions with the patient. The data is saved in
+ * a database and displayed in a table.
  * 
  */
 
@@ -68,7 +70,6 @@ public class CVLayout extends BorderPanel {
 
 		// RichTextArea
 		this.textinput = new TextArea();
-		// textinput.setValue("Type here the life event of the Patient you want to add.");
 		textinput
 				.setInputPrompt("Type here the life event of the Patient you want to add.");
 		textinput.setSizeFull();
@@ -100,8 +101,8 @@ public class CVLayout extends BorderPanel {
 	}
 
 	/**
-	 * Creates the "Save" Button to save the data from the date and text field
-	 * to the database the application.
+	 * This method creates the "Save" Button to save the data from the date and
+	 * text field to the database of the application.
 	 * 
 	 * @return Button
 	 */
@@ -119,7 +120,7 @@ public class CVLayout extends BorderPanel {
 	}
 
 	/**
-	 * Creates the "Exit" Button to exit the application.
+	 * Creates the "Exit" Button to exit the View and return to the Home View.
 	 * 
 	 * @return Button
 	 */
@@ -160,6 +161,13 @@ public class CVLayout extends BorderPanel {
 		});
 		return savebutton;
 	}
+
+	/**
+	 * This method shows the table which displays the information that was added
+	 * by the doctor or which is in the database.
+	 * 
+	 * @return Table
+	 */
 
 	public Table CVTable() {
 		Table cvtable = new Table(
