@@ -55,6 +55,12 @@ public class FindCaseLayout extends BorderPanel implements StatePatternInterface
 		this.endDate = new TextField();
 		this.description = new TextField();
 		
+		//Set all Textfields as required
+		this.doctorUID.setEnabled(false);
+		this.startDate.setEnabled(false);
+		this.endDate.setEnabled(false);
+		this.description.setEnabled(false);
+		
 		this.panel = new Panel();
 		this.panel.setStyleName("borderless");
 		this.panel.setSizeFull();
@@ -134,6 +140,10 @@ vertlayout.addComponent(createHomeViewButton());
 		IndexButton4.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID =1L;
 			public void buttonClick(ClickEvent event) {
+				doctorUID.setEnabled(true);
+				startDate.setEnabled(true);
+				endDate.setEnabled(true);
+				description.setEnabled(true);
 				State4();
 			}
 		});
