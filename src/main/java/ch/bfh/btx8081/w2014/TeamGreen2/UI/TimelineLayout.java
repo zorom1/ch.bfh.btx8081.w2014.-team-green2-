@@ -13,6 +13,8 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.FormLayout;
+import com.vaadin.ui.GridLayout;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Link;
@@ -70,11 +72,12 @@ public class TimelineLayout extends BorderPanel {
 		vertlayout.addComponent(this.linkTimeline);
 		vertlayout.addComponent(this.space1);
 		vertlayout.addComponent(createHomeViewButton());
-
+		
 		forlayout.addComponent(vertlayout);
 		forlayout.setSizeFull();
 		this.panel.setContent(forlayout);
 		setContent(panel);
+		
 	}
 	
 	/**
