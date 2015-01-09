@@ -72,8 +72,8 @@ public class AddNewPatientLayout extends BorderPanel implements
 	private String POSTCODE = null;
 	private String GENDER = null;
 	private String BIRTHDAY = null;
-	private String INSURANCE = null;
-
+	private String INSURANCE = null;	
+	
 	public AddNewPatientLayout() {
 		this.label = new Label("Add new patient");
 		this.label.setWidth(null);
@@ -96,6 +96,18 @@ public class AddNewPatientLayout extends BorderPanel implements
 		this.birthday = new TextField();
 		this.insurance = new TextField();
 		this.space = new Label("");
+		
+		//Set all Textfields as required
+		this.patId.setRequired(true);
+		this.firstname.setRequired(true);
+		this.lastName.setRequired(true);
+		this.street.setRequired(true);
+		this.city.setRequired(true);
+		this.postcode.setRequired(true);
+		this.gender.setRequired(true);
+		this.birthday.setRequired(true);
+		this.insurance.setRequired(true);
+		
 
 		this.panel = new Panel();
 		this.panel.setStyleName("borderless");
