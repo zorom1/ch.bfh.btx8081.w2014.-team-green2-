@@ -10,6 +10,7 @@ import java.util.Scanner;
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Case;
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Allcases;
 
+import com.vaadin.client.metadata.Property;
 import com.vaadin.client.ui.Field;
 import com.vaadin.data.Property.ValueChangeListener;
 import com.vaadin.event.FieldEvents.TextChangeListener;
@@ -35,8 +36,15 @@ import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeLayout;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
 
-public class CaseLayout extends BorderPanel implements StatePatternInterface{
+/**
+ *  Class for Layout of the Case User Interface
+ */
 
+
+
+public class CaseLayout extends BorderPanel implements StatePatternInterface{
+	//Initializing The Labels and Textfields for later use
+	
 	private static final long serialVersionUID = 1L;
 	private Button IndexButton;
 	private Label label;
@@ -64,7 +72,9 @@ public class CaseLayout extends BorderPanel implements StatePatternInterface{
 	private String EndDate= null;
 	private String Description =null;
 	
-	
+	/** 
+	 *  Layout of the Case UI with vertical Layout
+	 */
 public CaseLayout() {
 		this.label = new Label("Cases of Patients");
 		this.label.setWidth(null);
@@ -139,7 +149,10 @@ public CaseLayout() {
 		setContent(panel);
 
 	}	
-
+/**
+ * Adds a Button for finding the right case
+ * @return FindButton
+ */
 private Button createLookForCaseButton() {
 	IndexButton3 = new Button("Find");
 	IndexButton3.addStyleName("big");
@@ -151,7 +164,10 @@ private Button createLookForCaseButton() {
 	});
 	return IndexButton3;
 }
-
+/**
+ * adds a Button that redirects you to the Home View
+ * @return
+ */
 private Button createHomeViewButton() {
 	IndexButton = new Button("Home");
 	IndexButton.addStyleName("big");
@@ -165,16 +181,14 @@ private Button createHomeViewButton() {
 										
 	return IndexButton;
 }
+/**
+ * adds a Button which saves the Input Info in the case View
+ */
 private Button createReadyButton(){
 	IndexButton4 = new Button("Save");
 	IndexButton4.addStyleName("big");
 	IndexButton4.setEnabled(false);
 
-//	public void formHasChanged() {
-//	    boolean allFieldsValid = fieldGroup.isValid();
-//	    IndexButton4.setEnabled(allFieldsValid);
-//	}
-//	
 	IndexButton4.addClickListener(new Button.ClickListener() {
 		private static final long serialVersionUID =1L;
 		public void buttonClick(ClickEvent event) {
@@ -184,7 +198,9 @@ private Button createReadyButton(){
 	});
 	return IndexButton4;
 }
-
+/**
+ * Adds a Button to initialize the Creation of a new Case
+ */
 private Button createNewCaseButton() {
 	IndexButton2 = new Button("Take next available Case Number");
 		IndexButton2.addStyleName("big");
@@ -261,25 +277,4 @@ private Button createNewCaseButton() {
 		out.println(lastNumber);
 		out.close();
 	}
-//	TextChangeListener textListener = new TextChangeListener() {
-//	    @Override
-//	    public void textChange(TextChangeEvent event) {
-//	        formHasChanged();
-//	    }
-//	};
-//	
-//	ValueChangeListener valueListener = new ValueChangeListener() {
-//	    @Override
-//	    public void valueChange(ValueChangeEvent event) {
-//	        formHasChanged();
-//	    }
-//	};
-//
-//	for (Field f : fieldGroup.getFields()) {
-//	    if (f instanceof TextChangeNotifier) {
-//	        ((TextChangeNotifier) f).addTextChangeListener(textListener);
-//	    } else {
-//	        f.addValueChangeListener(valueListener);
-//	    }
-//	}
 }
