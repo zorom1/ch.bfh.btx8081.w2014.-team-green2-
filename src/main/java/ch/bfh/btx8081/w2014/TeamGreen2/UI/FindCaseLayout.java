@@ -1,5 +1,6 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.UI;
 
+
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.FormLayout;
@@ -10,6 +11,7 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 
+import ch.bfh.btx8081.w2014.TeamGreen2.Controller.FindFunctionCaseNb;
 import ch.bfh.btx8081.w2014.TeamGreen2.Controller.StatePatternInterface;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.BorderPanel;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
@@ -23,8 +25,16 @@ public class FindCaseLayout extends BorderPanel implements StatePatternInterface
 	private Label label;
 	private Label label1;
 	private Label label2;
-	private TextField patNb;
-	private TextField caseNb;
+	private Label label3;
+	private Label label4;
+	private Label label5;
+	private Label label6;
+	private TextField patNb; 
+	private TextField caseNb; 
+	private TextField doctorUID;  
+	private TextField startDate;  
+	private TextField endDate;  
+	private TextField description;  
 	private Panel panel;
 	private Button IndexButton2;
 	private Button IndexButton3;
@@ -34,8 +44,16 @@ public class FindCaseLayout extends BorderPanel implements StatePatternInterface
 		this.label.setWidth(null);
 		this.label1 = new Label("PID");
 		this.label2 = new Label("Case Number");
+		this.label3 = new Label("Doctor UID");
+		this.label4 = new Label("Start Date");
+		this.label5 = new Label("End Date");
+		this.label6 = new Label("Description");
 		this.caseNb = new TextField();
 		this.patNb = new TextField();
+		this.doctorUID = new TextField();
+		this.startDate = new TextField();
+		this.endDate = new TextField();
+		this.description = new TextField();
 		
 		this.panel = new Panel();
 		this.panel.setStyleName("borderless");
@@ -48,6 +66,15 @@ public class FindCaseLayout extends BorderPanel implements StatePatternInterface
 		vertlayout.addComponent(this.patNb);
 		vertlayout.addComponent(this.label2);
 		vertlayout.addComponent(this.caseNb);
+		vertlayout.addComponent(this.caseNb);
+		vertlayout.addComponent(this.label3);
+		vertlayout.addComponent(this.doctorUID);
+		vertlayout.addComponent(this.label4);
+		vertlayout.addComponent(this.startDate);
+		vertlayout.addComponent(this.label5);
+		vertlayout.addComponent(this.endDate);
+		vertlayout.addComponent(this.label6);
+		vertlayout.addComponent(this.description);
 		
 vertlayout.addComponent(createHomeViewButton());
 		
@@ -133,7 +160,18 @@ vertlayout.addComponent(createHomeViewButton());
 	@Override
 	public void State4() {
 		// TODO Auto-generated method stub
-		Notification.show("Find function must be done");	
+		final String MyCaseNb=caseNb.getValue();
+		final String MyPID=patNb.getValue();
+		FindFunctionCaseNb findFunctionCaseNb= new FindFunctionCaseNb();
+		findFunctionCaseNb.CheckFound(MyCaseNb,MyPID);
+		caseNb.setValue(findFunctionCaseNb.FoundCaseNb);
+		patNb.setValue(findFunctionCaseNb.FoundPatNb);
+		doctorUID.setValue(findFunctionCaseNb.FoundDoctorUID);
+		startDate.setValue(findFunctionCaseNb.FoundStartDate);
+		endDate.setValue(findFunctionCaseNb.FoundEndDate);
+		description.setValue(findFunctionCaseNb.FoundDescription);
+		Notification.show("Case is found");
+		
 	}
 
 }
