@@ -83,16 +83,19 @@ public Table createTable() {
 	 * 
 	 */
 	String [] temp_elem= new String[5];
-	if(tableFlag=="0"){
+	//if(tableFlag=="0"){
 	try {
-		//PrintWriter output1= new PrintWriter("sortpatients1.txt");
-		 // output1.close();
 		
-		TableElements.countElements();
+		TableElements telements= new TableElements();
+		telements.countElements();
+		
 	} catch (FileNotFoundException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
+	//}//for if
+	if(tableFlag=="3"){
+		
 	}
 	int ArraySize= TableElements.myElements.size();
 	int i=0;
@@ -101,7 +104,7 @@ public Table createTable() {
 	int k=1;
 	/*array from 5 elements is one line of the table
 	 	 */
-	//if(tableFlag=="0"){
+	
 	  while(i<ArraySize-1){
 		  for (int j=0;j<5  ;j++){
 			temp_elem[j] = TableElements.myElements.get(i); 

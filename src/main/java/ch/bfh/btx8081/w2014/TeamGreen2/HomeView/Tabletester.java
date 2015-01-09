@@ -10,7 +10,9 @@ public class Tabletester {
 		// TODO Auto-generated method stub
 		String [] temp_elem= new String[5];
 		try {
-			TableElements.countElements();
+			TableElements telements= new TableElements();
+			//TableElements.countElements();
+			telements.countElements();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

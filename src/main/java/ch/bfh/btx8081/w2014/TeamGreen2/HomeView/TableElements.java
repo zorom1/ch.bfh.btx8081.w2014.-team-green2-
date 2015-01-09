@@ -4,27 +4,34 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+import ch.bfh.btx8081.w2014.TeamGreen2.UI.CaseLayout;
+
 public class TableElements {
-	public static ArrayList<String> myElements=new ArrayList<String>();
-	public static ArrayList<String> myPatients= new ArrayList<String>();
+	public  static ArrayList<String> myElements=new ArrayList<String>();
+	//public static  ArrayList<String> myElements=null;
+	public static  ArrayList<String> myPatients= new ArrayList<String>();
+	//public static ArrayList<String> myPatients=null;
 	   public TableElements(){
 		   myElements= new ArrayList<String>();
 		   myPatients= new ArrayList<String>();
 	   }
+	  
 	   private static void addElement(String element){	
 		   myElements.add(element);
 	   }
-	   private static void addPatient(String patient){
+	   public static  void addPatient(String patient){
 		   myPatients.add(patient);
 	   }
 	   /*function sort and split elements of type Patient for the Table in HomeView
 	   */
-		public static ArrayList<String> countElements()  throws FileNotFoundException  {	
+		public  ArrayList<String> countElements()  throws FileNotFoundException  {	
 		//try{
 			/*patients.txt is file with actual records of type Patient
-			  */
+						  */
+			
 			File inputfile = new File("patients.txt");
 	  Scanner in = new Scanner(inputfile);
 	  PrintWriter output= new PrintWriter("sortpatients1.txt");
@@ -62,12 +69,15 @@ public class TableElements {
 	  }
 	
 	  in1.close();
-	 // PrintWriter output1= new PrintWriter("sortpatients1.txt");
-	  //output1.close();
+	 
+	  //myPatients=null;
 	return myElements;
 		
 	   }
-		private static ArrayList<String> mysort(int sortIndex){
+		public static void DefineLastLine(){
+			
+		}
+		public static ArrayList<String> mysort(int sortIndex){
 			for(int i=0;i<myPatients.size()-1;i++) {	
 				  String string1=myPatients.get(i);
 				  String string2=myPatients.get(i+1);
