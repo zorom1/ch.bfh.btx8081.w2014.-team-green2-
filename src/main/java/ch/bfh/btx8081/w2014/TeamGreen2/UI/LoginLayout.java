@@ -15,6 +15,7 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.FormLayout;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
@@ -72,15 +73,14 @@ public class LoginLayout extends BorderPanel implements StatePatternInterface {
 		vertlayout.addComponent(this.label);
 		vertlayout.setComponentAlignment(this.label, Alignment.TOP_CENTER);
 		vertlayout.addComponent(this.loginicon);
-		vertlayout.setComponentAlignment(this.loginicon,
-				Alignment.MIDDLE_CENTER);
+		vertlayout.setComponentAlignment(this.loginicon,Alignment.MIDDLE_CENTER);
 		vertlayout.addComponent(this.userid);
 		vertlayout.addComponent(this.user);
 		vertlayout.addComponent(this.pw);
 		vertlayout.addComponent(this.password);
 		vertlayout.addComponent(this.space);
 		vertlayout.addComponent(createHomeViewButton());
-		vertlayout.setComponentAlignment(IndexButton, Alignment.BOTTOM_CENTER);
+		vertlayout.setComponentAlignment(this.IndexButton,Alignment.MIDDLE_CENTER);
 
 		forlayout.addComponent(vertlayout);
 		forlayout.setSizeFull();
