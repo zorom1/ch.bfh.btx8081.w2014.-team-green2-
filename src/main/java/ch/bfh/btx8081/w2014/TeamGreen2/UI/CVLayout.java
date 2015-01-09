@@ -14,6 +14,7 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.FormLayout;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.PopupDateField;
@@ -41,7 +42,7 @@ public class CVLayout extends BorderPanel {
 	private Label space3;
 	private Button savebutton;
 	private Button exitbutton;
-	
+
 	public CVLayout() {
 
 		this.title = new Label("Curriculum Vitae");
@@ -67,8 +68,9 @@ public class CVLayout extends BorderPanel {
 
 		// RichTextArea
 		this.textinput = new TextArea();
-		//textinput.setValue("Type here the life event of the Patient you want to add.");
-		textinput.setInputPrompt("Type here the life event of the Patient you want to add.");
+		// textinput.setValue("Type here the life event of the Patient you want to add.");
+		textinput
+				.setInputPrompt("Type here the life event of the Patient you want to add.");
 		textinput.setSizeFull();
 		textinput.setRows(2);
 		textinput.setImmediate(true);
@@ -90,7 +92,6 @@ public class CVLayout extends BorderPanel {
 		vertlayout.addComponent(CVTable());
 		vertlayout.addComponent(this.space3);
 		vertlayout.addComponent(createHomeViewButton());
-		
 
 		forlayout.addComponent(vertlayout);
 		forlayout.setSizeFull();
@@ -99,7 +100,8 @@ public class CVLayout extends BorderPanel {
 	}
 
 	/**
-	 * Creates the "Save" Button to enter the application.
+	 * Creates the "Save" Button to save the data from the date and text field
+	 * to the database the application.
 	 * 
 	 * @return Button
 	 */
@@ -128,20 +130,20 @@ public class CVLayout extends BorderPanel {
 			private static final long serialVersionUID = 1L;
 
 			public void buttonClick(ClickEvent event) {
-				datefield.addValueChangeListener(new Property.ValueChangeListener() {
-					
-					@Override
-					public void valueChange(ValueChangeEvent event) {
-						String date = (String) event.getProperty()
-								.getValue();
-						
-						
-						// HOW TO ADD DATE IN DB?
-					
-					}
-		
-				});
-				
+				datefield
+						.addValueChangeListener(new Property.ValueChangeListener() {
+
+							@Override
+							public void valueChange(ValueChangeEvent event) {
+								String date = (String) event.getProperty()
+										.getValue();
+
+								// HOW TO ADD DATE IN DB?
+
+							}
+
+						});
+
 				textinput
 						.addValueChangeListener(new Property.ValueChangeListener() {
 							public void valueChange(ValueChangeEvent event) {
@@ -158,34 +160,38 @@ public class CVLayout extends BorderPanel {
 		});
 		return savebutton;
 	}
-	
+
 	public Table CVTable() {
-		Table cvtable = new Table("CV of the Patient - Jane Smith - PID 123-456-789");
+		Table cvtable = new Table(
+				"CV of the Patient - Jane Smith - PID 123-456-789");
 
 		// Define two columns for the built-in container
 		cvtable.addContainerProperty("Date", String.class, null);
-		cvtable.addContainerProperty("Event",  String.class, null);
+		cvtable.addContainerProperty("Event", String.class, null);
 
 		// Add a few other rows using shorthand addItem()
-		cvtable.addItem(new Object[]{"1991-05", "Death of Mother"}, 1);
-		cvtable.addItem(new Object[]{"1995-03", "Brother jumped from Bridge, survived"}, 2);
-		cvtable.addItem(new Object[]{"2000-12", "Married John Smith, police sergeant"}, 3);
-		cvtable.addItem(new Object[]{"2012-09", "Death of husband, John Smith, local shooting"}, 4);
+		cvtable.addItem(new Object[] { "1991-05", "Death of Mother" }, 1);
+		cvtable.addItem(new Object[] { "1995-03",
+				"Brother jumped from Bridge, survived" }, 2);
+		cvtable.addItem(new Object[] { "2000-12",
+				"Married John Smith, police sergeant" }, 3);
+		cvtable.addItem(new Object[] { "2012-09",
+				"Death of husband, John Smith, local shooting" }, 4);
 		cvtable.sort();
-		
+
 		// Handle the header clicks
 		cvtable.addHeaderClickListener(new Table.HeaderClickListener() {
-		    public void headerClick(HeaderClickEvent event) {
-		    	cvtable.setSortAscending(true);
-		    }
+			public void headerClick(HeaderClickEvent event) {
+				cvtable.setSortAscending(true);
+			}
 		});
-		
+
 		// Show exactly the currently contained rows (items)
 		cvtable.setPageLength(cvtable.size());
 		cvtable.setSizeFull();
-		
+
 		return cvtable;
-		
+
 	}
-	
+
 }
