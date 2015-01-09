@@ -170,6 +170,7 @@ public class AddNewPatientLayout extends BorderPanel implements
 
 			public void buttonClick(ClickEvent event) {
 				State3();
+				IndexButton4.setEnabled(true);
 			}
 		});
 
@@ -180,6 +181,7 @@ public class AddNewPatientLayout extends BorderPanel implements
 	private Button createReadyButton() {
 		IndexButton4 = new Button("Save");
 		IndexButton4.addStyleName("big");
+		IndexButton4.setEnabled(false);
 		IndexButton4.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID = 1L;
 
