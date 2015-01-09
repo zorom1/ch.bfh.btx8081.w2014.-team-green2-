@@ -11,6 +11,7 @@ import ch.bfh.btx8081.w2014.TeamGreen2.UI.CaseView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.FindCaseView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.LoginView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.TimelineView;
+import ch.bfh.btx8081.w2014.TeamGreen2.UI.AddNewDiagnosisView; 
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.navigator.Navigator;
@@ -74,6 +75,11 @@ public class MyVaadinUI extends UI
     public static void setFindCaseView(FindCaseView findcaseview){
     	findcaseview.setImmediate(true);
     	navigator.addView("FindCaseView", findcaseview);
+    	navigator.navigateTo("FindCaseView");
+    } 
+    public static void setAddNewDiagnosisView (AddNewDiagnosisView addnewdiagnososview){
+    	addnewdiagnososview.setImmediate(true);
+    	navigator.addView("FindCaseView", addnewdiagnososview);
     	navigator.navigateTo("FindCaseView");
     } 
     
