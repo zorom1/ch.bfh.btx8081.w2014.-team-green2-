@@ -7,7 +7,9 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
-
+/**
+ * Class Used to Authenticate User during Login procedure
+ */
 //import application.LogAuthor;
 
 public class LogAuthor {
@@ -19,7 +21,8 @@ return new SAXBuilder().build(filename);
  public LogAuthor(){
 	  
  }
-
+ 	//Check whether the Input of the User is valid or different from the
+ 	//authentication sheet
    public void CheckAcces(String MyLog, String MyPassw){
 	   
 	   //String AuthorResult;
@@ -50,6 +53,7 @@ return new SAXBuilder().build(filename);
 						SecUID.removeContent(SecuPW);
 						System.out.println("access sucessful->run programm");
 						AuthorResult="true";
+					
 					} else{
 						System.out.println("no access-> password is not correct");
 					AuthorResult="false";
@@ -60,6 +64,7 @@ return new SAXBuilder().build(filename);
               //AuthorResult="This Login does not exist";
              // System.out.println("Login is not correct");
 		}
+		//deny access to Homeview
 	if (AuthorResult=="No Login"){
 		System.out.println("Login is not correct");
 	}
