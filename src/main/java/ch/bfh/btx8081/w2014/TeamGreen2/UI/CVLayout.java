@@ -43,7 +43,7 @@ public class CVLayout extends BorderPanel {
 	private Label space2;
 	private Label space3;
 	private Button savebutton;
-	private Button exitbutton;
+	private Button homebutton;
 
 	public CVLayout() {
 
@@ -101,26 +101,26 @@ public class CVLayout extends BorderPanel {
 	}
 
 	/**
-	 * This method creates the "Save" Button to save the data from the date and
-	 * text field to the database of the application.
+	 * Creates the "Home" Button to exit the View and return to the Home View.
 	 * 
 	 * @return Button
 	 */
 
 	public Button createHomeViewButton() {
-		exitbutton = new Button("Exit");
-		exitbutton.addClickListener(new Button.ClickListener() {
+		homebutton = new Button("Home");
+		homebutton.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID = 1L;
 
 			public void buttonClick(ClickEvent event) {
 				MyVaadinUI.setHomeView(new HomeView());
 			}
 		});
-		return exitbutton;
+		return homebutton;
 	}
 
 	/**
-	 * Creates the "Exit" Button to exit the View and return to the Home View.
+	 * This method creates the "Save" Button to save the data from the date and
+	 * text field to the database of the application.
 	 * 
 	 * @return Button
 	 */
