@@ -6,8 +6,6 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.AllPatients;
-import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Case;
-import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Allcases;
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Patient;
 
 
