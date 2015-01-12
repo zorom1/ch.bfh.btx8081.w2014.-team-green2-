@@ -8,6 +8,7 @@ import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.AddNewPatientView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.CVView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.CaseView;
+import ch.bfh.btx8081.w2014.TeamGreen2.UI.FindCasePIDView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.FindCaseView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.LoginView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.TimelineView;
@@ -60,6 +61,12 @@ public class MyVaadinUI extends UI
 		cvview.setImmediate(true);
 		navigator.addView("CVView", cvview);
     	navigator.navigateTo("CVView");
+	}
+    
+    public static void setFindCasePIDView(FindCasePIDView findPIDPanel) {
+    	findPIDPanel.setImmediate(true);
+		navigator.addView("FindCasePIDView", findPIDPanel);
+    	navigator.navigateTo("FindCasePIDView");
 	}
     
     public static void setTimelineView(TimelineView timelineview) {
