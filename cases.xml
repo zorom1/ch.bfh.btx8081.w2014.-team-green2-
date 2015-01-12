@@ -5,6 +5,12 @@
         <EndDate>28.11.2014</EndDate>
         <Description>Depression</Description>
     </Case>
+<Case caseNb="25" pid="p38" uid="d99">
+        <StartDate>03.04.2014</StartDate>
+        <EndDate>04.05.2014</EndDate>
+        <Description>check1 drug addiction</Description>
+    </Case>
+
     <Case caseNb="28" pid="p34" uid="d23">
         <StartDate>20.12.2014</StartDate>
         <EndDate>28.12.2014</EndDate>
@@ -15,9 +21,14 @@
         <EndDate>13.02.2014</EndDate>
         <Description>check Depression</Description>
     </Case>
-    <Case caseNb="37" pid="p37" uid="d97">
+    <Case caseNb="37" pid="p38" uid="d97">
         <StartDate>14.03.2015</StartDate>
         <EndDate>14.07.2015</EndDate>
         <Description>drug addiction</Description>
+    </Case>
+    <Case caseNb="39" pid="p38" uid="d99">
+        <StartDate>06..05.2015</StartDate>
+        <EndDate>09.08.2015</EndDate>
+        <Description>check drug addiction</Description>
     </Case>
 </allcases>
