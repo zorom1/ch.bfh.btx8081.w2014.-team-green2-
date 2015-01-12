@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2014.TeamGreen2.Database_XML;
 
 import java.io.FileNotFoundException;
 
+
 import ch.bfh.btx8081.w2014.TeamGreen2.Modeldata.Address;
 /*class is for testing of transfer of data of types 
  * Patient, diagnose, Case, Medication from Array Lists 
@@ -24,15 +25,16 @@ public class Tester {
 		Address address = new Address("MyStreet","MyCity","postcode");
 		AllPatients allPatients = new AllPatients();
    Patient patient = new Patient(myPID, myLastName, myFirstName,address,myGender,myBirthday,myInsurance);
+ //AllPatients.Status="Looking";
+   AllPatients.Status="Correct"; 
    
- //AllPatients.Status="new";   
     AllPatients.makeSerial(patient);
-     Patient patient3= new Patient("a44","Meier","Rene",address,"m","2.10.1952","Insurance1");
+    // Patient patient3= new Patient("a44","Meier","Rene",address,"m","2.10.1952","Insurance1");
      //AllPatients.makeSerial(patient3);
-     Patient patient4= new Patient("a22", "Wyss","Stephan", address,"m","12.09.1986","Insurance2");
-     AllPatients.makeSerial(patient4);
-     Patient patient5= new Patient("a28", "Wyss","Gino", address,"m","21.06.1967","Insurance3");
-     AllPatients.makeSerial(patient5);
+    // Patient patient4= new Patient("a22", "Wyss","Stephan", address,"m","12.09.1986","Insurance2");
+    // AllPatients.makeSerial(patient4);
+   //  Patient patient5= new Patient("a28", "Wyss","Gino", address,"m","21.06.1967","Insurance3");
+  //   AllPatients.makeSerial(patient5);
     Case myCase=new Case("25","p25","d24","23.11.2014","28.11.2014","Depression"); 
     //Allcases.makeSerial(myCase);
     Diagnose mydiagnose= new Diagnose("Angina","c34","p25","Antibiotics");
@@ -47,6 +49,8 @@ public class Tester {
     
 	}
 
+	//public String sendPID="p554";
+//must not be, in other class getPID()
 	}
 
 

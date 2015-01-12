@@ -22,6 +22,8 @@ import javax.xml.validation.SchemaFactory;
 
 import org.xml.sax.SAXException;
 
+
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement 
 public class AllPatients {
@@ -41,9 +43,19 @@ public class AllPatients {
  * 		
  */
 		public static List<Patient> patients=null;
+	/*the variables that content the results of search
+	 	 */
+		public static String FoundInsurance;
+		public static String FoundCity;
+		public static String FoundStreet;
+		public static String FoundPcode;
+		public static String FoundBirthday;
+		public static String FoundName;
+		public static String FoundLastName;
+		public static String FoundGender;
 		/* the variable Status defines what exactly 
 		 * we do : put new record in patients.xml or just read
-		 * a current contain of patients.xml 
+		 * a current contain of patients.xml or change something in record 
 		 */
 		public static String Status="newRecord";
 		
@@ -59,6 +71,10 @@ public class AllPatients {
 		}
 			public static void makeSerial(Patient patient) throws FileNotFoundException  {
 			Patient myPatient =patient;
+			/*the variable sendPID we need for searching option or when we want to change 
+			 * something in record
+			 */
+			String sendPID=myPatient.getPID();
 			PrintWriter outpatient= new PrintWriter("patients.txt");		
 				AllPatients allPatients=new AllPatients();
 				
@@ -70,13 +86,67 @@ public class AllPatients {
 					allPatients.save("patiens.xml");
 					}
 		//loop shows contain of array List,
-		//in form To String, can be used later for sending data to PatientView			
+		//in form To String, can be used later for sending data to PatientView	
+					
 					for (int i=0; i<=patients.size()-1;i++){
-						//System.out.println(patients.get(i));		
+						//System.out.println(patients.get(i));	
+						Patient lookpatient=patients.get(i);
 				        outpatient.println(patients.get(i));
+				        
 					}
 	
 					outpatient.close();
+					/*if Status == "Looking" - here is search function
+					 					 */
+					if (Status=="Looking"){
+						
+						System.out.println("Looking" );
+						for (int i=0; i<=patients.size()-1;i++){
+						Patient lookpatient=patients.get(i);
+						
+						if(sendPID.compareTo(lookpatient.getPID())==0){
+							
+					//System.out.println(lookpatient.getPID()+lookpatient.getInsurance()+lookpatient.address.toString()+
+						//	lookpatient.address.getCity()+lookpatient.address.getStreet()+lookpatient.address.getPcode());
+							FoundInsurance=lookpatient.getInsurance();
+							FoundCity=lookpatient.address.getCity();
+							FoundStreet=lookpatient.address.getStreet();
+							FoundName=lookpatient.getFirstName();
+							FoundLastName=lookpatient.getLastName();
+							FoundPcode=lookpatient.address.getPcode();
+							FoundBirthday=lookpatient.getBirthday();
+							FoundGender=lookpatient.getGender();
+						}
+					}
+					}
+					/*if Status =="Correct", we correct patient record
+					 * and save it in xml file
+					 					 */
+					if (Status=="Correct"){
+						for (int i=0; i<=patients.size()-1;i++){
+							Patient lookpatient=patients.get(i);
+							System.out.println("Correct");
+							
+							if(sendPID.compareTo(lookpatient.getPID())==0){
+						//patients.remove(i);		
+						patients.set(i, myPatient);
+					
+						
+								FoundInsurance=lookpatient.getInsurance();
+								FoundCity=lookpatient.address.getCity();
+								FoundStreet=lookpatient.address.getStreet();
+								FoundName=lookpatient.getFirstName();
+								FoundLastName=lookpatient.getLastName();
+								FoundPcode=lookpatient.address.getPcode();
+								FoundBirthday=lookpatient.getBirthday();
+								FoundGender=lookpatient.getGender();
+								
+							}
+						
+						}	
+						allPatients.save("patients.xml");
+					}
+					
 		}
 			/*method save bring renewed array list in xml.file
 			 * 
