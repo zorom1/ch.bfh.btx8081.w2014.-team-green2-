@@ -1,25 +1,26 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.UI;
 
-
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Panel;
+//import com.vaadin.ui.Table;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 
+import ch.bfh.btx8081.w2014.TeamGreen2.Controller.FindFunctionAllCasesPID;
 import ch.bfh.btx8081.w2014.TeamGreen2.Controller.FindFunctionCaseNb;
 import ch.bfh.btx8081.w2014.TeamGreen2.Controller.StatePatternInterface;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.BorderPanel;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
 
-public class FindCaseLayout extends BorderPanel implements StatePatternInterface {
+public class FindCaseLayout extends BorderPanel implements
+		StatePatternInterface {
 
-	
 	private static final long serialVersionUID = 1L;
 	private Button IndexButton;
 	private Label label;
@@ -29,17 +30,21 @@ public class FindCaseLayout extends BorderPanel implements StatePatternInterface
 	private Label label4;
 	private Label label5;
 	private Label label6;
-	private TextField patNb; 
-	private TextField caseNb; 
-	private TextField doctorUID;  
-	private TextField startDate;  
-	private TextField endDate;  
-	private TextField description;  
+	private TextField patNb;
+	private TextField caseNb;
+	private TextField doctorUID;
+	private TextField startDate;
+	private TextField endDate;
+	private TextField description;
 	private Panel panel;
 	private Button IndexButton2;
 	private Button IndexButton3;
 	private Button IndexButton4;
-	public FindCaseLayout(){
+	private Button IndexButton5;
+	private String MyCaseNb = null;
+	private String MyPID = null;
+
+	public FindCaseLayout() {
 		this.label = new Label("Looking for patient's cases");
 		this.label.setWidth(null);
 		this.label1 = new Label("PID");
@@ -54,13 +59,12 @@ public class FindCaseLayout extends BorderPanel implements StatePatternInterface
 		this.startDate = new TextField();
 		this.endDate = new TextField();
 		this.description = new TextField();
-		
-		//Set all Textfields as required
+
+		// Set all Textfields as required
 		this.doctorUID.setEnabled(false);
 		this.startDate.setEnabled(false);
 		this.endDate.setEnabled(false);
 		this.description.setEnabled(false);
-		
 		this.panel = new Panel();
 		this.panel.setStyleName("borderless");
 		this.panel.setSizeFull();
@@ -81,64 +85,86 @@ public class FindCaseLayout extends BorderPanel implements StatePatternInterface
 		vertlayout.addComponent(this.endDate);
 		vertlayout.addComponent(this.label6);
 		vertlayout.addComponent(this.description);
-		
-vertlayout.addComponent(createHomeViewButton());
-		
-		
+		vertlayout.addComponent(createHomeViewButton());
 		vertlayout.addComponent(createCaseViewButton());
-		
-		
-		
 		vertlayout.addComponent(createFindCaseButton());
-		vertlayout.addComponent(createReadyButton());
+		vertlayout.addComponent(createFindAllCasesButton());
+		vertlayout.addComponent(createFindCaseNbButton());
 		forlayout.addComponent(vertlayout);
 		forlayout.setSizeFull();
 		this.panel.setContent(forlayout);
 		setContent(panel);
+
 	}
-	
+
 	private Button createCaseViewButton() {
 		IndexButton = new Button("Back");
 		IndexButton.addStyleName("big");
 		IndexButton.addClickListener(new Button.ClickListener() {
-			private static final long serialVersionUID =1L;
+			private static final long serialVersionUID = 1L;
+
 			public void buttonClick(ClickEvent event) {
 				State1();
 			}
 		});
-											
+
 		return IndexButton;
 	}
+
 	private Button createFindCaseButton() {
 		IndexButton3 = new Button("LookForCase");
-			IndexButton3.addStyleName("big");
-			IndexButton3.addClickListener(new Button.ClickListener() {
-				private static final long serialVersionUID =1L;
-				public void buttonClick(ClickEvent event) {
-					State3();
-				}
-			});
-												
-			return IndexButton3;
-			
+		IndexButton3.addStyleName("big");
+		IndexButton3.addClickListener(new Button.ClickListener() {
+			private static final long serialVersionUID = 1L;
+
+			public void buttonClick(ClickEvent event) {
+
+				Notification
+						.show("insert a case Nb and press: 'Find case Nb' Button or insert a PID Nb and press 'Find all cases to PID' Button");
+			}
+		});
+
+		return IndexButton3;
+
 	}
+
 	private Button createHomeViewButton() {
 		IndexButton2 = new Button("Home");
 		IndexButton2.addStyleName("big");
 		IndexButton2.addClickListener(new Button.ClickListener() {
-			private static final long serialVersionUID =1L;
+			private static final long serialVersionUID = 1L;
+
 			public void buttonClick(ClickEvent event) {
 				State2();
 			}
 		});
-											
+
 		return IndexButton2;
-	}	
-	private Button createReadyButton(){
-		IndexButton4 = new Button("Ready");
+	}
+
+	private Button createFindCaseNbButton() {
+		IndexButton4 = new Button("find Case Nb");
 		IndexButton4.addStyleName("big");
 		IndexButton4.addClickListener(new Button.ClickListener() {
-			private static final long serialVersionUID =1L;
+			private static final long serialVersionUID = 1L;
+
+			public void buttonClick(ClickEvent event) {
+				doctorUID.setEnabled(true);
+				startDate.setEnabled(true);
+				endDate.setEnabled(true);
+				description.setEnabled(true);
+				State3();
+			}
+		});
+		return IndexButton4;
+	}
+
+	private Button createFindAllCasesButton() {
+		IndexButton5 = new Button("find all cases");
+		IndexButton5.addStyleName("big");
+		IndexButton5.addClickListener(new Button.ClickListener() {
+			private static final long serialVersionUID = 1L;
+
 			public void buttonClick(ClickEvent event) {
 				doctorUID.setEnabled(true);
 				startDate.setEnabled(true);
@@ -147,12 +173,13 @@ vertlayout.addComponent(createHomeViewButton());
 				State4();
 			}
 		});
-		return IndexButton4;
+		return IndexButton5;
 	}
+
 	@Override
 	public void State1() {
 		MyVaadinUI.setCaseView(new CaseView());
-		
+
 	}
 
 	@Override
@@ -164,24 +191,28 @@ vertlayout.addComponent(createHomeViewButton());
 	@Override
 	public void State3() {
 		// TODO Auto-generated method stub
-		Notification.show("Give, please, in PID or case number, when finished, press Ready Button");
+		MyCaseNb = caseNb.getValue();
+		MyPID = patNb.getValue();
+		FindFunctionCaseNb findFunctionCasesNb = new FindFunctionCaseNb();
+		findFunctionCasesNb.CheckFound(MyCaseNb, MyPID);
+
+		caseNb.setValue(findFunctionCasesNb.FoundCaseNb);
+		patNb.setValue(findFunctionCasesNb.FoundPatNb);
+		doctorUID.setValue(findFunctionCasesNb.FoundDoctorUID);
+		startDate.setValue(findFunctionCasesNb.FoundStartDate);
+		endDate.setValue(findFunctionCasesNb.FoundEndDate);
+		description.setValue(findFunctionCasesNb.FoundDescription);
+		Notification.show("Case is found");
 	}
 
 	@Override
 	public void State4() {
 		// TODO Auto-generated method stub
-		final String MyCaseNb=caseNb.getValue();
-		final String MyPID=patNb.getValue();
-		FindFunctionCaseNb findFunctionCaseNb= new FindFunctionCaseNb();
-		findFunctionCaseNb.CheckFound(MyCaseNb,MyPID);
-		caseNb.setValue(findFunctionCaseNb.FoundCaseNb);
-		patNb.setValue(findFunctionCaseNb.FoundPatNb);
-		doctorUID.setValue(findFunctionCaseNb.FoundDoctorUID);
-		startDate.setValue(findFunctionCaseNb.FoundStartDate);
-		endDate.setValue(findFunctionCaseNb.FoundEndDate);
-		description.setValue(findFunctionCaseNb.FoundDescription);
-		Notification.show("Case is found");
-		
-	}
+		MyCaseNb = caseNb.getValue();
+		MyPID = patNb.getValue();
+		FindFunctionAllCasesPID findFunctionAllCasesPID = new FindFunctionAllCasesPID();
+		findFunctionAllCasesPID.CheckFound(MyCaseNb, MyPID);
+		MyVaadinUI.setFindCasePIDView(new FindCasePIDView());
 
+	}
 }
