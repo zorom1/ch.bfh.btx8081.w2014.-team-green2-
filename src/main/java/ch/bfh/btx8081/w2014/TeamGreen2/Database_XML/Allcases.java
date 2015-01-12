@@ -42,7 +42,13 @@ public class Allcases {
 		
 				public static List<Case> cases=null;
 	 	
-		
+		public static String FoundCaseNb;
+		public static String FoundPatNb;
+		public static String FoundDoctorUID;
+		public static String FoundStartDate;
+		public static String FoundEndDate;
+		public static String FoundDescription;
+		public static String StatusC="Correct";
 			public Allcases(){
 			cases= new ArrayList<Case>();
 		}
@@ -56,13 +62,43 @@ public class Allcases {
 				
 			
 			Allcases allcases=new Allcases();
-			
-			
+			String sendCaseNb=myCase.getCaseNb();
+			System.out.println(sendCaseNb);
 			Allcases.load("cases.xml");
-			addCase(myCase);
 			
+			if (StatusC=="newRecord") {
+			
+			addCase(myCase);
+			System.out.println("NewRecord");
 			allcases.save("cases.xml");
-		
+			}
+			
+			if (StatusC=="Correct"){
+				for (int i=0; i<=cases.size()-1;i++){
+					Case lookcase=cases.get(i);
+					System.out.println("Correct");
+					
+					if(sendCaseNb.compareTo(lookcase.getPID())==0){
+				//patients.remove(i);		
+						cases.set(i, myCase);
+			
+				
+					//	FoundInsurance=lookpatient.getInsurance();
+						//FoundCity=lookpatient.address.getCity();
+				//		FoundStreet=lookpatient.address.getStreet();
+					//	FoundName=lookpatient.getFirstName();
+				//		FoundLastName=lookpatient.getLastName();
+					//	FoundPcode=lookpatient.address.getPcode();
+						//FoundBirthday=lookpatient.getBirthday();
+						//FoundGender=lookpatient.getGender();
+						
+					}
+				
+				}	
+				allcases.save("cases.xml");
+			}
+			
+			
 		}
 			private void save(String filename)throws FileNotFoundException{
 			
@@ -85,7 +121,7 @@ public class Allcases {
 	    public static Allcases load(String filename){
 	    	try{
 	    		Unmarshaller u =context.createUnmarshaller();
-	    	//	u.setSchema(readXmlSchema("patient2.xsd"));
+	    		//u.setSchema(readXmlSchema("patient2.xsd"));
 	    		return (Allcases) u.unmarshal(new File(filename));
 	    		    	}
 	    	catch(JAXBException e) {
