@@ -128,7 +128,7 @@ public class AllPatients {
 							System.out.println("Correct");
 							
 							if(sendPID.compareTo(lookpatient.getPID())==0){
-						//patients.remove(i);		
+						patients.remove(i);		
 						patients.set(i, myPatient);
 					
 						
@@ -144,7 +144,7 @@ public class AllPatients {
 							}
 						
 						}	
-						allPatients.save("patients.xml");
+						allPatients.save("patiens.xml");
 					}
 					
 		}
