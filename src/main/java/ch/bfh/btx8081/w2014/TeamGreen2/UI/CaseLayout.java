@@ -71,7 +71,7 @@ public class CaseLayout extends BorderPanel implements StatePatternInterface{
 	private String StartDate=null;
 	private String EndDate= null;
 	private String Description =null;
-	
+	private String currentNb;
 	/** 
 	 *  Layout of the Case UI with vertical Layout
 	 */
@@ -230,6 +230,11 @@ private Button createNewCaseButton() {
 		StartDate=startDate.getValue();
 		EndDate=endDate.getValue();
 		Description=description.getValue();
+		/*next if statement deines if user give in the case number that
+		 * matches with next available case number,  if not data are not saved
+		 * in DB, user gets notification that it is necessary to try again
+		 */
+		if(CaseNb.compareTo(currentNb)==0){
 		Case mycase = new Case(CaseNb,PatNb,DoctorNb,StartDate,EndDate,Description); 
 		try {
 			Allcases.makeSerial(mycase);
@@ -238,6 +243,10 @@ private Button createNewCaseButton() {
 			e.printStackTrace();
 		}
 		Notification.show("Done");
+		}
+		else{
+			Notification.show("Case number is not correct, please try again");
+		}
 		}
 	@Override
 	public void State3(){
@@ -262,6 +271,7 @@ private Button createNewCaseButton() {
 		File inputfile = new File("lastCaseNb.txt");
 		Scanner in = new Scanner(inputfile);
 		String lastNumber=in.next();
+		
 		System.out.println(lastNumber);
 		String subnumber=lastNumber.substring(1,4);
 		System.out.println(subnumber);
@@ -273,8 +283,10 @@ private Button createNewCaseButton() {
 		lastNumber="c"+"0"+numb;	
 		}
 		caseNb.setValue(lastNumber);
+		currentNb=lastNumber;
 		PrintWriter out= new PrintWriter("lastCaseNb.txt");
 		out.println(lastNumber);
 		out.close();
+		in.close();
 	}
 }
