@@ -52,7 +52,7 @@ public class Allcases {
 		 public static String FoundStartDate;
 		 public static String FoundEndDate;
 		 public static String FoundDescription;
-		public static String StatusC;
+		public static String StatusC="newRecord";
 			public Allcases(){
 			cases= new ArrayList<Case>();
 		}
