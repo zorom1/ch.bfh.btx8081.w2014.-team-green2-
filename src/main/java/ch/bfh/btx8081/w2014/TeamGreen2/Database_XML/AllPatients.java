@@ -90,7 +90,7 @@ public class AllPatients {
 					
 					for (int i=0; i<=patients.size()-1;i++){
 						//System.out.println(patients.get(i));	
-						Patient lookpatient=patients.get(i);
+						
 				        outpatient.println(patients.get(i));
 				        
 					}
@@ -100,14 +100,14 @@ public class AllPatients {
 					 					 */
 					if (Status=="Looking"){
 						
-						System.out.println("Looking" );
+					//	System.out.println("Looking" );
 						for (int i=0; i<=patients.size()-1;i++){
 						Patient lookpatient=patients.get(i);
 						
 						if(sendPID.compareTo(lookpatient.getPID())==0){
 							
 					//System.out.println(lookpatient.getPID()+lookpatient.getInsurance()+lookpatient.address.toString()+
-						//	lookpatient.address.getCity()+lookpatient.address.getStreet()+lookpatient.address.getPcode());
+					//		lookpatient.address.getCity()+lookpatient.address.getStreet()+lookpatient.address.getPcode());
 							FoundInsurance=lookpatient.getInsurance();
 							FoundCity=lookpatient.address.getCity();
 							FoundStreet=lookpatient.address.getStreet();
@@ -125,21 +125,21 @@ public class AllPatients {
 					if (Status=="Correct"){
 						for (int i=0; i<=patients.size()-1;i++){
 							Patient lookpatient=patients.get(i);
-							System.out.println("Correct");
+						//	System.out.println("Correct");
 							
 							if(sendPID.compareTo(lookpatient.getPID())==0){
-						patients.remove(i);		
+						//patients.remove(i);		
 						patients.set(i, myPatient);
 					
 						
-								FoundInsurance=lookpatient.getInsurance();
-								FoundCity=lookpatient.address.getCity();
-								FoundStreet=lookpatient.address.getStreet();
-								FoundName=lookpatient.getFirstName();
-								FoundLastName=lookpatient.getLastName();
-								FoundPcode=lookpatient.address.getPcode();
-								FoundBirthday=lookpatient.getBirthday();
-								FoundGender=lookpatient.getGender();
+								FoundInsurance="";
+								FoundCity="";
+								FoundStreet="";
+								FoundName="";
+								FoundLastName="";
+								FoundPcode=myPatient.address.getPcode();
+								FoundBirthday="";
+								FoundGender="";
 								
 							}
 						
