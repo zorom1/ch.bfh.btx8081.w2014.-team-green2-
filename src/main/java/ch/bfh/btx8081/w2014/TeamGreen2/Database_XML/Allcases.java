@@ -1,7 +1,9 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.Database_XML;
 /*create Root Element Allcases in file cases.xml,
+
  * contain methods save and load which bring data 
- * from Array List cases to cases.xml and back
+ * from Array List cases to cases.xml and back,allows to
+ * add new case record and edit records
  */
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -41,18 +43,21 @@ public class Allcases {
 		@XmlElement(name="Case")
 		
 				public static List<Case> cases=null;
-	 	
+	 /*next variables are for changing information between xml DB
+	  * and TextFields in View
+	    */
 		public static String FoundCaseNb;
-		public static String FoundPatNb;
-		public static String FoundDoctorUID;
-		public static String FoundStartDate;
-		public static String FoundEndDate;
-		public static String FoundDescription;
-		public static String StatusC="Correct";
+		public static  String FoundPatNb;
+		public static  String FoundDoctorUID;
+		 public static String FoundStartDate;
+		 public static String FoundEndDate;
+		 public static String FoundDescription;
+		public static String StatusC;
 			public Allcases(){
 			cases= new ArrayList<Case>();
 		}
-		
+		/*ad new record in array and than in xml file
+		    		 */
 		public static void addCase(Case myCase){
 			cases.add(myCase);
 		}
@@ -60,38 +65,56 @@ public class Allcases {
 			
 			Case myCase=mycase;
 				
-			
+		  
 			Allcases allcases=new Allcases();
+			/*variable sendCase Nb is defined for
+			 * possibility to find a record and to
+			 * change one or many elements in xml DB
+			 */
 			String sendCaseNb=myCase.getCaseNb();
-			System.out.println(sendCaseNb);
+			/*takes all records from xml to array list of objects of
+			 * type Case
+			 */
 			Allcases.load("cases.xml");
-			
+			/*next if statement defines actions when we need to add new record 
+			 *a xml DB 
+			 */
 			if (StatusC=="newRecord") {
 			
 			addCase(myCase);
-			System.out.println("NewRecord");
+			
 			allcases.save("cases.xml");
 			}
-			
+			/*next if statement defines actions we need to
+			 *change something in existing records in xml DB 
+			 */
 			if (StatusC=="Correct"){
 				for (int i=0; i<=cases.size()-1;i++){
 					Case lookcase=cases.get(i);
 					System.out.println("Correct");
-					
-					if(sendCaseNb.compareTo(lookcase.getPID())==0){
+				/*next if defines if we have found 
+				 * 	a record where we need to make changements
+				 */
+					if(sendCaseNb.compareTo(lookcase.getCaseNb())==0){
+												
 				//patients.remove(i);		
 						cases.set(i, myCase);
-			
-				
-					//	FoundInsurance=lookpatient.getInsurance();
-						//FoundCity=lookpatient.address.getCity();
-				//		FoundStreet=lookpatient.address.getStreet();
-					//	FoundName=lookpatient.getFirstName();
-				//		FoundLastName=lookpatient.getLastName();
-					//	FoundPcode=lookpatient.address.getPcode();
-						//FoundBirthday=lookpatient.getBirthday();
-						//FoundGender=lookpatient.getGender();
+			/*changed data are saved in xml, in variables are
+			 *saved empty fields, except in case Number is actual
+			 *case number, content of variables 
+			 *will be displayed in Text Fields in View FindCase,
+			 *user can check by case number if data are changed 
+			 		  			 */
 						
+						
+						FoundCaseNb=myCase.getCaseNb();
+						FoundPatNb="";
+						FoundDoctorUID="";
+						FoundStartDate="";
+						FoundEndDate="";
+						FoundDescription="";
+						
+									
 					}
 				
 				}	
