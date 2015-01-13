@@ -1,6 +1,8 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.Database_XML;
 /*Create Root Element in file patients.xml, contain method which
- * serialize object of type Patient to xml.file and back
+ * serialize object of type Patient to xml.file and back,
+ * allows to add new patient's record, find with PID a record,
+ * correct a record
 */
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -53,6 +55,7 @@ public class AllPatients {
 		public static String FoundName;
 		public static String FoundLastName;
 		public static String FoundGender;
+		
 		/* the variable Status defines what exactly 
 		 * we do : put new record in patients.xml or just read
 		 * a current contain of patients.xml or change something in record 
@@ -108,6 +111,9 @@ public class AllPatients {
 							
 					//System.out.println(lookpatient.getPID()+lookpatient.getInsurance()+lookpatient.address.toString()+
 					//		lookpatient.address.getCity()+lookpatient.address.getStreet()+lookpatient.address.getPcode());
+							/*elements and attributes of xml are saved in variables,
+							 * like this it is possible to show them in text fields of VIew
+							   							 */
 							FoundInsurance=lookpatient.getInsurance();
 							FoundCity=lookpatient.address.getCity();
 							FoundStreet=lookpatient.address.getStreet();
@@ -116,6 +122,7 @@ public class AllPatients {
 							FoundPcode=lookpatient.address.getPcode();
 							FoundBirthday=lookpatient.getBirthday();
 							FoundGender=lookpatient.getGender();
+							
 						}
 					}
 					}
@@ -137,7 +144,7 @@ public class AllPatients {
 								FoundStreet="";
 								FoundName="";
 								FoundLastName="";
-								FoundPcode=myPatient.address.getPcode();
+								FoundPcode="";
 								FoundBirthday="";
 								FoundGender="";
 								
