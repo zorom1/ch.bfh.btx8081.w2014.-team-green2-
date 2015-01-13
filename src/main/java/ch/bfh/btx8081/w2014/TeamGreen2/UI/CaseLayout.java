@@ -230,7 +230,7 @@ private Button createNewCaseButton() {
 		StartDate=startDate.getValue();
 		EndDate=endDate.getValue();
 		Description=description.getValue();
-		/*next if statement deines if user give in the case number that
+		/*next if statement defines if user give in the case number that
 		 * matches with next available case number,  if not data are not saved
 		 * in DB, user gets notification that it is necessary to try again
 		 */
