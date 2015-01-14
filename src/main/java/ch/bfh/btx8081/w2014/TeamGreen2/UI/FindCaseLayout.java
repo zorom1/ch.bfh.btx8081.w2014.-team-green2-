@@ -34,6 +34,7 @@ public class FindCaseLayout extends BorderPanel implements
 	private Label label4;
 	private Label label5;
 	private Label label6;
+	private Label notification;
 	private TextField patNb;
 	private TextField caseNb;
 	private TextField doctorUID;
@@ -63,6 +64,7 @@ public class FindCaseLayout extends BorderPanel implements
 		this.label4 = new Label("Start Date");
 		this.label5 = new Label("End Date");
 		this.label6 = new Label("Description");
+		this.notification = new Label("First change Information then click edit to accept change");
 		this.caseNb = new TextField();
 		this.patNb = new TextField();
 		this.doctorUID = new TextField();
@@ -104,6 +106,7 @@ public class FindCaseLayout extends BorderPanel implements
 		vertlayout.addComponent(createFindCaseNbButton());
 		vertlayout.addComponent(createFindCaseButton());
 		vertlayout.addComponent(createFindAllCasesButton());
+		vertlayout.addComponent(notification);
 		vertlayout.addComponent(createHomeViewButton());
 		vertlayout.addComponent(createCaseViewButton());
 		forlayout.addComponent(vertlayout);
