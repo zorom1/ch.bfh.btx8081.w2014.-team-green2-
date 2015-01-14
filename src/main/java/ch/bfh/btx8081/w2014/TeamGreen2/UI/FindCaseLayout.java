@@ -101,11 +101,10 @@ public class FindCaseLayout extends BorderPanel implements
 	
 	
 		
-
-		vertlayout.addComponent(createHomeViewButton());
+		vertlayout.addComponent(createFindCaseNbButton());
 		vertlayout.addComponent(createFindCaseButton());
 		vertlayout.addComponent(createFindAllCasesButton());
-		vertlayout.addComponent(createFindCaseNbButton());
+		vertlayout.addComponent(createHomeViewButton());
 		vertlayout.addComponent(createCaseViewButton());
 		forlayout.addComponent(vertlayout);
 		forlayout.setSizeFull();
