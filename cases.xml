@@ -30,44 +30,4 @@
         <EndDate>09.08.2015</EndDate>
         <Description>check drug addiction</Description>
     </Case>
-    <Case caseNb="c057" pid="2142452" uid="213">
-        <StartDate>12</StartDate>
-        <EndDate>12</EndDate>
-        <Description>12421</Description>
-    </Case>
-    <Case caseNb="c060" pid="" uid="">
-        <StartDate></StartDate>
-        <EndDate></EndDate>
-        <Description></Description>
-    </Case>
-    <Case caseNb="" pid="" uid="">
-        <StartDate></StartDate>
-        <EndDate></EndDate>
-        <Description></Description>
-    </Case>
-    <Case caseNb="" pid="" uid="">
-        <StartDate></StartDate>
-        <EndDate></EndDate>
-        <Description></Description>
-    </Case>
-    <Case caseNb="" pid="" uid="">
-        <StartDate></StartDate>
-        <EndDate></EndDate>
-        <Description></Description>
-    </Case>
-    <Case caseNb="c062" pid="" uid="">
-        <StartDate></StartDate>
-        <EndDate></EndDate>
-        <Description></Description>
-    </Case>
-    <Case caseNb="c067" pid="" uid="">
-        <StartDate></StartDate>
-        <EndDate></EndDate>
-        <Description></Description>
-    </Case>
-    <Case caseNb="c068" pid="cvds" uid="vw">
-        <StartDate>1e221453464</StartDate>
-        <EndDate>2124</EndDate>
-        <Description>4214</Description>
-    </Case>
 </allcases>
