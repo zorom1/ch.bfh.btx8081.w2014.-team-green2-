@@ -45,12 +45,7 @@ public class FindPatientLayout extends BorderPanel implements
 	private Label label1;
 	private Label label2;
 	private Label label3;
-	private Label label4;
-	private Label label5;
-	private Label label6;
-	private Label label7;
-	private Label label8;
-	private Label label9;
+	
 	private TextField setPid;
 	private TextField field1;
 	private TextField field2;
@@ -81,7 +76,7 @@ public class FindPatientLayout extends BorderPanel implements
 		this.label.setWidth(null);
 		this.label1 = new Label("Please type in PID");
 		this.label2 = new Label("Master Data");
-
+this.label3= new Label("If you want to edit data, give, first, the PID in and than click the Search button");
 		this.setPid = new TextField();
 		this.field1 = new TextField();
 		this.field2 = new TextField();
@@ -129,7 +124,7 @@ public class FindPatientLayout extends BorderPanel implements
 
 		vertlayout.addComponent(this.space);
 		vertlayout.setComponentAlignment(this.space, Alignment.MIDDLE_CENTER);
-
+		vertlayout.addComponent(this.label3);
 		vertlayout.addComponent(createEditButton());
 	
 
@@ -205,6 +200,13 @@ public class FindPatientLayout extends BorderPanel implements
 		 		 */
     AllPatients.Status="Looking";
     MyPID=setPid.getValue();
+    /*if statement checks if text field for PID is empty,
+     * in this case comes notification, that user must type the PID in
+     */
+    if(MyPID.compareTo("")==0){
+    	Notification.show("Give, please, in patien's identification number");
+    }
+    else{
     Address address = new Address("","","");
     Patient patient = new Patient(MyPID, "","",address, "","","");
     try {
@@ -223,7 +225,7 @@ public class FindPatientLayout extends BorderPanel implements
      field8.setValue(AllPatients.FoundInsurance);
      
 	}
-
+	}
 	@Override
 	public void State3() {
 		/*this function changed elements in xml
