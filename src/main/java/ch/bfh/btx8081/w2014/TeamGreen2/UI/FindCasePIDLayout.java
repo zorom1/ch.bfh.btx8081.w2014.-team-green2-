@@ -4,10 +4,12 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
+
 import ch.bfh.btx8081.w2014.TeamGreen2.Controller.FindFunctionAllCasesPID;
 import ch.bfh.btx8081.w2014.TeamGreen2.Controller.StatePatternInterface;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.BorderPanel;
@@ -32,7 +34,9 @@ public class FindCasePIDLayout extends BorderPanel implements
 		vertlayout.addComponent(this.label);
 		vertlayout.setComponentAlignment(this.label, Alignment.TOP_CENTER);
 		vertlayout.addComponent(createTable());
+		//vertlayout.setSizeFull();//versuch ->hatte keinen Einfluss
 		vertlayout.addComponent(createBackButton());
+		//vertlayout.setSizeUndefined(); //neuer Versuch
 		forlayout.addComponent(vertlayout);
 		forlayout.setSizeFull();
 		this.panel.setContent(forlayout);
@@ -69,8 +73,12 @@ public class FindCasePIDLayout extends BorderPanel implements
 
 			line++;
 		}
-
+if (FindFunctionAllCasesPID.FindPIDResults.size()==0){
+			
+	Notification.show("no cases are found");
+		}
 		return table;
+		
 	}
 
 	private Button createBackButton() {
