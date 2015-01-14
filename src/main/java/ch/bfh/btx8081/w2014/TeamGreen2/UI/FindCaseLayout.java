@@ -1,30 +1,27 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.UI;
 
 import java.io.FileNotFoundException;
-
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Panel;
-import com.vaadin.ui.Table;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
-
 import ch.bfh.btx8081.w2014.TeamGreen2.Controller.FindFunctionAllCasesPID;
 import ch.bfh.btx8081.w2014.TeamGreen2.Controller.FindFunctionCaseNb;
 import ch.bfh.btx8081.w2014.TeamGreen2.Controller.StatePatternInterface;
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Allcases;
 import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Case;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.BorderPanel;
-import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
 
 /**
- * The following class provides the Layout for the View of searching a existing case.
- * The Information is read from the XML-File that was Created in CaseLayout.
+ * The following class provides the Layout for the View of searching a existing
+ * case. The Information is read from the XML-File that was Created in
+ * CaseLayout.
  */
 
 public class FindCaseLayout extends BorderPanel implements
@@ -54,13 +51,13 @@ public class FindCaseLayout extends BorderPanel implements
 	private String MyCaseNb;
 	private String MyPID;
 	public String myDoctor;
-    public String myDate1;
-    public String myDate2;
-    public String myDescr;
-    public String myCNb;
-    public String myPNb;
-    public String flag="not empty";
-    
+	public String myDate1;
+	public String myDate2;
+	public String myDescr;
+	public String myCNb;
+	public String myPNb;
+	public String flag = "not empty";
+
 	public FindCaseLayout() {
 		this.label = new Label("Looking for patient's cases");
 		this.label.setWidth(null);
@@ -70,7 +67,8 @@ public class FindCaseLayout extends BorderPanel implements
 		this.label4 = new Label("Start Date");
 		this.label5 = new Label("End Date");
 		this.label6 = new Label("Description");
-		this.notification = new Label("First change Information then click edit to accept change");
+		this.notification = new Label(
+				"First change Information then click edit to accept change");
 		this.caseNb = new TextField();
 		this.patNb = new TextField();
 		this.doctorUID = new TextField();
@@ -104,8 +102,6 @@ public class FindCaseLayout extends BorderPanel implements
 		vertlayout.addComponent(this.endDate);
 		vertlayout.addComponent(this.label6);
 		vertlayout.addComponent(this.description);
-
-		
 		vertlayout.addComponent(createFindCaseButton());
 		vertlayout.addComponent(createFindCaseNbButton());
 		vertlayout.addComponent(createFindAllCasesButton());
@@ -181,7 +177,6 @@ public class FindCaseLayout extends BorderPanel implements
 		return IndexButton4;
 	}
 
-
 	private Button createFindAllCasesButton() {
 		IndexButton5 = new Button("find all cases");
 		IndexButton5.addStyleName("big");
@@ -198,6 +193,7 @@ public class FindCaseLayout extends BorderPanel implements
 		});
 		return IndexButton5;
 	}
+
 	@Override
 	public void State1() {
 		MyVaadinUI.setCaseView(new CaseView());
@@ -207,32 +203,34 @@ public class FindCaseLayout extends BorderPanel implements
 	@Override
 	public void State2() {
 		// TODO Auto-generated method stub
-		//MyVaadinUI.setHomeView(new HomeView());
-		String myCNb=caseNb.getValue();
-	    String myPNb =patNb.getValue();
-	    String myDoctor=doctorUID.getValue();
-	    String myDate1=startDate.getValue();
-	    String myDate2=endDate.getValue();
-	    String myDescr=description.getValue();
-	    
-	    Case mycase = new Case(myCNb, myPNb, myDoctor, myDate1, myDate2, myDescr);
-	    Allcases.StatusC="Correct";
-	    try {
+		// MyVaadinUI.setHomeView(new HomeView());
+		String myCNb = caseNb.getValue();
+		String myPNb = patNb.getValue();
+		String myDoctor = doctorUID.getValue();
+		String myDate1 = startDate.getValue();
+		String myDate2 = endDate.getValue();
+		String myDescr = description.getValue();
+
+		Case mycase = new Case(myCNb, myPNb, myDoctor, myDate1, myDate2,
+				myDescr);
+		Allcases.StatusC = "Correct";
+		try {
 			Allcases.makeSerial(mycase);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	    /*changed data from cases.xml
-	     	     */
-	   // Allcases allcases = new Allcases();
-	    caseNb.setValue(Allcases.FoundCaseNb);  
-	    patNb.setValue(Allcases.FoundPatNb);
-	    doctorUID.setValue(Allcases.FoundDoctorUID);
-	    startDate.setValue(Allcases.FoundStartDate);
-	    endDate.setValue(Allcases.FoundEndDate);
-	    description.setValue(Allcases.FoundDescription);
-	  
+		/*
+		 * changed data from cases.xml
+		 */
+		// Allcases allcases = new Allcases();
+		caseNb.setValue(Allcases.FoundCaseNb);
+		patNb.setValue(Allcases.FoundPatNb);
+		doctorUID.setValue(Allcases.FoundDoctorUID);
+		startDate.setValue(Allcases.FoundStartDate);
+		endDate.setValue(Allcases.FoundEndDate);
+		description.setValue(Allcases.FoundDescription);
+
 	}
 
 	@Override
@@ -240,29 +238,26 @@ public class FindCaseLayout extends BorderPanel implements
 		// TODO Auto-generated method stub
 		MyCaseNb = caseNb.getValue();
 		MyPID = patNb.getValue();
-		if (MyCaseNb==""){
-			//flag="empty";
+		if (MyCaseNb == "") {
 			Notification.show("No Case Nb is found");
+		} else {
+			FindFunctionCaseNb findFunctionCasesNb = new FindFunctionCaseNb();
+			findFunctionCasesNb.CheckFound(MyCaseNb, MyPID);
+			if (findFunctionCasesNb.FoundDoctorUID == null) {
+				Notification.show("No Case Nb is found");
+			}
+			// {
+			else {
+				Notification.show("Case is found");
+			}
+
+			caseNb.setValue(findFunctionCasesNb.FoundCaseNb);
+			patNb.setValue(findFunctionCasesNb.FoundPatNb);
+			doctorUID.setValue(findFunctionCasesNb.FoundDoctorUID);
+			startDate.setValue(findFunctionCasesNb.FoundStartDate);
+			endDate.setValue(findFunctionCasesNb.FoundEndDate);
+			description.setValue(findFunctionCasesNb.FoundDescription);
 		}
-		else{
-		FindFunctionCaseNb findFunctionCasesNb = new FindFunctionCaseNb();
-		findFunctionCasesNb.CheckFound(MyCaseNb, MyPID);
-		if (findFunctionCasesNb.FoundDoctorUID==null){
-			Notification.show("No Case Nb is found");
-		}
-		else{
-			Notification.show("Case is found");
-		}
-		}
-		FindFunctionCaseNb findFunctionCasesNb = new FindFunctionCaseNb();
-		caseNb.setValue(findFunctionCasesNb.FoundCaseNb);
-		patNb.setValue(findFunctionCasesNb.FoundPatNb);
-		doctorUID.setValue(findFunctionCasesNb.FoundDoctorUID);
-		startDate.setValue(findFunctionCasesNb.FoundStartDate);
-		endDate.setValue(findFunctionCasesNb.FoundEndDate);
-		description.setValue(findFunctionCasesNb.FoundDescription);
-		
-		
 	}
 
 	@Override
