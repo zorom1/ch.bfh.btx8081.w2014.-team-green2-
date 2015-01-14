@@ -7,6 +7,7 @@ import ch.bfh.btx8081.w2014.TeamGreen2.UI.CVView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.CaseView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.TimelineView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.AddNewDiagnosisView; 
+import ch.bfh.btx8081.w2014.TeamGreen2.UI.PatientsRecordView; 
 
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
@@ -38,6 +39,8 @@ public class HomeLayout extends BorderPanel {
 	private Button casebutton;
 	private Button addnewpatientbutton;
 	private Button addnewdiagnosisbutton; 
+	private Button patientsrecordbutton; 
+	
 	public static String tableFlag = "0";
 
 	public HomeLayout() {
@@ -62,8 +65,9 @@ public class HomeLayout extends BorderPanel {
 		vertlayout.addComponent(createCVViewButton());
 		vertlayout.addComponent(createTimelineViewButton());
 		vertlayout.addComponent(createCaseButton());
-		vertlayout.addComponent(createNewPatientButton());
+		//vertlayout.addComponent(createNewPatientButton());
 		vertlayout.addComponent(createNewDiagnosisButton());
+		vertlayout.addComponent(createPatientsRecordButton());
 		
 
 		forlayout.addComponent(vertlayout);
@@ -230,5 +234,18 @@ public class HomeLayout extends BorderPanel {
 
 		});
 		return addnewdiagnosisbutton;
+	}
+	public Button createPatientsRecordButton() {
+		patientsrecordbutton = new Button("Patients record");
+		patientsrecordbutton.addClickListener(new Button.ClickListener() {
+			private static final long serialVersionUID = 1L;
+
+			public void buttonClick(ClickEvent event) {
+				// MyVaadinUI.setTimelineView(new TimelineView());
+				MyVaadinUI.setPatientsRecordView(new PatientsRecordView());
+			}
+
+		});
+		return patientsrecordbutton;
 	}
 }

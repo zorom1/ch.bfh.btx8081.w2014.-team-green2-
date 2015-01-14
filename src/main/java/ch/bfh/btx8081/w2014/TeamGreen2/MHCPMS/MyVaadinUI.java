@@ -13,6 +13,8 @@ import ch.bfh.btx8081.w2014.TeamGreen2.UI.FindCaseView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.LoginView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.TimelineView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.AddNewDiagnosisView; 
+import ch.bfh.btx8081.w2014.TeamGreen2.UI.PatientsRecordView; 
+import ch.bfh.btx8081.w2014.TeamGreen2.UI.FindPatientView; 
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.navigator.Navigator;
@@ -86,8 +88,18 @@ public class MyVaadinUI extends UI
     } 
     public static void setAddNewDiagnosisView (AddNewDiagnosisView addnewdiagnososview){
     	addnewdiagnososview.setImmediate(true);
-    	navigator.addView("FindCaseView", addnewdiagnososview);
-    	navigator.navigateTo("FindCaseView");
+    	navigator.addView("AddNewDiagnosisView", addnewdiagnososview);
+    	navigator.navigateTo("AddNewDiagnosisView");
+    } 
+    public static void setPatientsRecordView (PatientsRecordView patientsrecordview1){
+    	patientsrecordview1.setImmediate(true);
+    	navigator.addView("PatientsRecordView", patientsrecordview1);
+    	navigator.navigateTo("PatientsRecordView");
+    } 
+    public static void setFindPatientView (FindPatientView findpatientview){
+    	findpatientview.setImmediate(true);
+    	navigator.addView("FindPatientView", findpatientview);
+    	navigator.navigateTo("FindPatientView");
     } 
     
 }
