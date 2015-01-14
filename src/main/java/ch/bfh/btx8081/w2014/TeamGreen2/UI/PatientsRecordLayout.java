@@ -3,14 +3,18 @@ package ch.bfh.btx8081.w2014.TeamGreen2.UI;
 import java.io.FileNotFoundException;
 
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.BorderPanel;
+import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.PatientsRecordView;
+
+
 
 
 
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Component;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
@@ -35,6 +39,7 @@ public class PatientsRecordLayout extends BorderPanel {
 	private Label space1;
 	private Button addnewpatientbutton;
 	private Button addnewdiagnosisbutton; 
+	private Button back;
 	private Button findpatientbutton;
 
 	public static String tableFlag = "0";
@@ -59,8 +64,10 @@ public class PatientsRecordLayout extends BorderPanel {
 	
 		vertlayout.addComponent(createNewPatientButton());
 		vertlayout.addComponent(createFindButton());
-		
-		
+		vertlayout.addComponent(this.space);
+		vertlayout.setComponentAlignment(this.space, Alignment.TOP_CENTER);
+
+		vertlayout.addComponent(createNewBack());
 		
 
 		forlayout.addComponent(vertlayout);
@@ -69,8 +76,24 @@ public class PatientsRecordLayout extends BorderPanel {
 		setContent(panel);
 	}
 
+	private Component createNewBack() {
+		back= new Button("Back");
+		back.addClickListener(new Button.ClickListener() {
+			private static final long serialVersionUID = 1L;
+
+			public void buttonClick(ClickEvent event) {
+				// MyVaadinUI.setTimelineView(new TimelineView());
+				MyVaadinUI.setHomeView(new HomeView());
+			}
+
+		});
+		
+		return back;
+	}
+
 	/**
 	 * This method provides the Table where the patient data is displayed.
+	 * 
 	 * 
 	 * @return Table
 	 */
