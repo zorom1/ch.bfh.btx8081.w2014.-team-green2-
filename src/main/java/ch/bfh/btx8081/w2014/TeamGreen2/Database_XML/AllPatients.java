@@ -147,7 +147,7 @@ public class AllPatients {
 								FoundPcode="";
 								FoundBirthday="";
 								FoundGender="";
-								
+						
 							}
 						
 						}	
