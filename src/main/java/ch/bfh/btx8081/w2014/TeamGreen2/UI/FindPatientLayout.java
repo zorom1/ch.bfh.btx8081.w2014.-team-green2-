@@ -1,5 +1,7 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.UI;
-
+/*this view gives possibility to look for patient's data
+ * and edit patients data
+ */
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -63,6 +65,15 @@ public class FindPatientLayout extends BorderPanel implements
 	private Button IndexButton2;
 	private Button IndexButton3;
 	private Button IndexButton4;
+	private String MyPID;
+	private String myName;
+	private String myLastName;
+	private String myStreet;
+	private String myCity;
+	private String myPcode;
+	private String myGender;
+	private String myBirthday;
+	private String myInsurance;
 
 	
 	public FindPatientLayout() {
@@ -142,7 +153,7 @@ public class FindPatientLayout extends BorderPanel implements
 			private static final long serialVersionUID = 1L;
 
 			public void buttonClick(ClickEvent event) {
-				State1();
+				State3();
 			}
 		});
 
@@ -185,17 +196,70 @@ public class FindPatientLayout extends BorderPanel implements
 		HomeLayout.tableFlag="2";
 		MyVaadinUI.setHomeView(new HomeView());
 	}
-
+ 
 	@Override
+		 
 	public void State2() {
-
-
-
+		/*here is a function that allows to find patient's record
+		 * by PID, the data than are showed in text fields
+		 		 */
+    AllPatients.Status="Looking";
+    MyPID=setPid.getValue();
+    Address address = new Address("","","");
+    Patient patient = new Patient(MyPID, "","",address, "","","");
+    try {
+		AllPatients.makeSerial(patient);
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+     field1.setValue(AllPatients.FoundLastName);
+     field2.setValue(AllPatients.FoundName);
+     field3.setValue(AllPatients.FoundGender);
+     field4.setValue(AllPatients.FoundStreet);
+     field5.setValue(AllPatients.FoundCity);
+     field6.setValue(AllPatients.FoundPcode);
+     field7.setValue(AllPatients.FoundBirthday);
+     field8.setValue(AllPatients.FoundInsurance);
+     
 	}
 
 	@Override
 	public void State3() {
-
+		/*this function changed elements in xml
+		 * after user has corrected text fields
+		 * 
+		 */
+    AllPatients.Status="Correct";
+    MyPID=setPid.getValue();
+    myName=field2.getValue();
+    myLastName=field1.getValue();
+    myGender=field3.getValue();
+    myBirthday=field7.getValue();
+    myInsurance=field8.getValue();
+    myStreet=field4.getValue();
+    myCity=field5.getValue();
+    myPcode=field6.getValue();
+    Address address = new Address(myStreet, myCity, myPcode);
+    Patient patient = new Patient (MyPID,myLastName, myName,address,myGender, myBirthday, myInsurance);
+    
+    try {
+		AllPatients.makeSerial(patient);
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+    /*changed data are shown in text fields
+          */
+    field1.setValue(AllPatients.FoundLastName);
+    field2.setValue(AllPatients.FoundName);
+    field3.setValue(AllPatients.FoundGender);
+    field4.setValue(AllPatients.FoundStreet);
+    field5.setValue(AllPatients.FoundCity);
+    field6.setValue(AllPatients.FoundPcode);
+    field7.setValue(AllPatients.FoundBirthday);
+    field8.setValue(AllPatients.FoundInsurance);
+    Notification.show("Changements are saved");
 	}
 
 	@Override
