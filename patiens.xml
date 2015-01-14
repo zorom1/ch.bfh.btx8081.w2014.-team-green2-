@@ -24,28 +24,16 @@
         <Birthday>23.04.1976</Birthday>
         <Insurance>Arcosana</Insurance>
     </Patient>
-    <Patient pid="p554">
-        <FNname>Jana</FNname>
-        <LNname>Pahud</LNname>
-        <Gender>f</Gender>
-        <Address>
-            <city>Lyss</city>
-            <pcode>2233</pcode>
-            <street>Martiweg</street>
-        </Address>
-        <Birthday>29.09.1988</Birthday>
-        <Insurance>Arcosana</Insurance>
-    </Patient>
     <Patient pid="p777">
         <FNname>Gino</FNname>
         <LNname>Ampelio</LNname>
         <Gender>m</Gender>
         <Address>
-            <city>Bern</city>
+            <city>Lyss</city>
             <pcode>3006</pcode>
-            <street>Fweg 5</street>
+            <street>Frikartweg 5</street>
         </Address>
-        <Birthday>10.02.1968</Birthday>
+        <Birthday>10.02.1955</Birthday>
         <Insurance>Visana</Insurance>
     </Patient>
     <Patient pid="p025">
@@ -61,16 +49,75 @@
         <Insurance>Visana</Insurance>
     </Patient>
     <Patient pid="p222">
-        <FNname>Daniela</FNname>
-        <LNname>Blatter</LNname>
+        <FNname>Olga</FNname>
+        <LNname>Strazzini</LNname>
         <Gender>f</Gender>
         <Address>
             <city>Bern</city>
-            <pcode>3029</pcode>
-            <street>Eigerplatz 3</street>
+            <pcode>3006</pcode>
+            <street>Luternauweg 15</street>
         </Address>
-        <Birthday>22.03.1976</Birthday>
-        <Insurance>ccc</Insurance>
+        <Birthday>23.04.1976</Birthday>
+        <Insurance>Arcosana</Insurance>
     </Patient>
-    
+    <Patient pid="p999">
+        <FNname>Peter</FNname>
+        <LNname>Quiller</LNname>
+        <Gender>m</Gender>
+        <Address>
+            <city>Bern</city>
+            <pcode>3006</pcode>
+            <street>Matterstrasse 4</street>
+        </Address>
+        <Birthday>29.09.1999</Birthday>
+        <Insurance>nnn</Insurance>
+    </Patient>
+    <Patient pid="p077">
+        <FNname>Luca</FNname>
+        <LNname>Boradori</LNname>
+        <Gender>m</Gender>
+        <Address>
+            <city>Bern</city>
+            <pcode>3006</pcode>
+            <street>Ostring 3</street>
+        </Address>
+        <Birthday>25.07.1988</Birthday>
+        <Insurance>nnn</Insurance>
+    </Patient>
+    <Patient pid="p766">
+        <FNname>Brigitte</FNname>
+        <LNname>Marti</LNname>
+        <Gender>f</Gender>
+        <Address>
+            <city>Biel</city>
+            <pcode>3008</pcode>
+            <street>Bernstrasse 4</street>
+        </Address>
+        <Birthday>23.01.1957</Birthday>
+        <Insurance>nnn</Insurance>
+    </Patient>
+    <Patient pid="p776">
+        <FNname>James</FNname>
+        <LNname>Donev</LNname>
+        <Gender>m</Gender>
+        <Address>
+            <city>Bern</city>
+            <pcode>3006</pcode>
+            <street>Ostring 5</street>
+        </Address>
+        <Birthday>23.07.1977</Birthday>
+        <Insurance>mmm</Insurance>
+    </Patient>
+    <Patient pid="p051">
+        <FNname>Claudia</FNname>
+        <LNname>Marchetti</LNname>
+        <Gender>f</Gender>
+        <Address>
+            <city>Bern</city>
+            <pcode>3011</pcode>
+            <street>Aarbergergasse 29</street>
+        </Address>
+        <Birthday>12.09.1965</Birthday>
+        <Insurance>nnn</Insurance>
+    </Patient>
 </allPatients>
