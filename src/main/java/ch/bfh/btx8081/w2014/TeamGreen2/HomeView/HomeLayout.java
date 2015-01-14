@@ -14,6 +14,7 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.FormLayout;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.Table;
@@ -35,6 +36,7 @@ public class HomeLayout extends BorderPanel {
 	private Panel panel;
 	private Label space;
 	private Label space1;
+	private Label space2;
 	private Button cvbutton;
 	private Button timelinebutton;
 	private Button casebutton;
@@ -50,6 +52,7 @@ public class HomeLayout extends BorderPanel {
 		this.title.setWidth(null);
 		this.space = new Label("");
 		this.space1 = new Label("");
+		this.space2 = new Label("");
 		this.panel = new Panel();
 		this.panel.setStyleName("borderless");
 		this.panel.setSizeFull();
@@ -62,14 +65,22 @@ public class HomeLayout extends BorderPanel {
 		vertlayout.setComponentAlignment(this.space, Alignment.TOP_CENTER);
 
 		vertlayout.addComponent(createTable());
-
-		vertlayout.addComponent(createCVViewButton());
-		vertlayout.addComponent(createTimelineViewButton());
-		vertlayout.addComponent(createCaseButton());
-		vertlayout.addComponent(createNewDiagnosisButton());
-		vertlayout.addComponent(createPatientsRecordButton());
+		vertlayout.addComponent(this.space1);
+		
+		HorizontalLayout horizlayout = new HorizontalLayout();
+		horizlayout.setSizeFull();
+		horizlayout.addComponent(createCVViewButton());
+		horizlayout.addComponent(createTimelineViewButton());
+		horizlayout.addComponent(createCaseButton());
+		
+		HorizontalLayout horizlayout2 = new HorizontalLayout();
+		horizlayout2.setWidth("66%");
+		horizlayout2.addComponent(createNewDiagnosisButton());
+		horizlayout2.addComponent(createPatientsRecordButton());
 
 		forlayout.addComponent(vertlayout);
+		forlayout.addComponent(horizlayout);
+		forlayout.addComponent(horizlayout2);
 		forlayout.setSizeFull();
 		this.panel.setContent(forlayout);
 		setContent(panel);
