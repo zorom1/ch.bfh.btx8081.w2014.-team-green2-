@@ -34,9 +34,7 @@ public class FindCasePIDLayout extends BorderPanel implements
 		vertlayout.addComponent(this.label);
 		vertlayout.setComponentAlignment(this.label, Alignment.TOP_CENTER);
 		vertlayout.addComponent(createTable());
-		//vertlayout.setSizeFull();//versuch ->hatte keinen Einfluss
 		vertlayout.addComponent(createBackButton());
-		//vertlayout.setSizeUndefined(); //neuer Versuch
 		forlayout.addComponent(vertlayout);
 		forlayout.setSizeFull();
 		this.panel.setContent(forlayout);
@@ -75,7 +73,7 @@ public class FindCasePIDLayout extends BorderPanel implements
 		}
 if (FindFunctionAllCasesPID.FindPIDResults.size()==0){
 			
-	Notification.show("no cases are found");
+	Notification.show("No cases are found!");
 		}
 		return table;
 		
