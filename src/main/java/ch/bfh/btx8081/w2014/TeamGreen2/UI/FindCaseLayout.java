@@ -59,6 +59,7 @@ public class FindCaseLayout extends BorderPanel implements
     public String myDescr;
     public String myCNb;
     public String myPNb;
+    public String flag="not empty";
     
 	public FindCaseLayout() {
 		this.label = new Label("Looking for patient's cases");
@@ -239,16 +240,29 @@ public class FindCaseLayout extends BorderPanel implements
 		// TODO Auto-generated method stub
 		MyCaseNb = caseNb.getValue();
 		MyPID = patNb.getValue();
+		if (MyCaseNb==""){
+			//flag="empty";
+			Notification.show("No Case Nb is found");
+		}
+		else{
 		FindFunctionCaseNb findFunctionCasesNb = new FindFunctionCaseNb();
 		findFunctionCasesNb.CheckFound(MyCaseNb, MyPID);
-
+		if (findFunctionCasesNb.FoundDoctorUID==null){
+			Notification.show("No Case Nb is found");
+		}
+		else{
+			Notification.show("Case is found");
+		}
+		}
+		FindFunctionCaseNb findFunctionCasesNb = new FindFunctionCaseNb();
 		caseNb.setValue(findFunctionCasesNb.FoundCaseNb);
 		patNb.setValue(findFunctionCasesNb.FoundPatNb);
 		doctorUID.setValue(findFunctionCasesNb.FoundDoctorUID);
 		startDate.setValue(findFunctionCasesNb.FoundStartDate);
 		endDate.setValue(findFunctionCasesNb.FoundEndDate);
 		description.setValue(findFunctionCasesNb.FoundDescription);
-		Notification.show("Case is found");
+		
+		
 	}
 
 	@Override
