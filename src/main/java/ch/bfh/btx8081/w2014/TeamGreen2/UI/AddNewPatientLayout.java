@@ -205,7 +205,7 @@ public class AddNewPatientLayout extends BorderPanel implements
 
 	@Override
 	public void State1() {
-		HomeLayout.tableFlag="2";
+		HomeLayout.tableFlag="0";
 		MyVaadinUI.setHomeView(new HomeView());
 	}
 
@@ -265,6 +265,7 @@ System.out.println("Address="+address.getCity()+address.getStreet()+address.getP
 		lastNumber="p"+"0"+numb;	
 		}
 		patId.setValue(lastNumber);
+		in.close();
 		PrintWriter out= new PrintWriter("lastpatient.txt");
 		out.println(lastNumber);
 		out.close();
