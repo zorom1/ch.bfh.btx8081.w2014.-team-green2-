@@ -1,13 +1,14 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.HomeView;
 
 import java.io.FileNotFoundException;
+
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
+import ch.bfh.btx8081.w2014.TeamGreen2.UI.AddNewDiagnosisView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.AddNewPatientView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.CVView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.CaseView;
+import ch.bfh.btx8081.w2014.TeamGreen2.UI.PatientsRecordView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.TimelineView;
-import ch.bfh.btx8081.w2014.TeamGreen2.UI.AddNewDiagnosisView; 
-import ch.bfh.btx8081.w2014.TeamGreen2.UI.PatientsRecordView; 
 
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
@@ -38,9 +39,9 @@ public class HomeLayout extends BorderPanel {
 	private Button timelinebutton;
 	private Button casebutton;
 	private Button addnewpatientbutton;
-	private Button addnewdiagnosisbutton; 
-	private Button patientsrecordbutton; 
-	
+	private Button addnewdiagnosisbutton;
+	private Button patientsrecordbutton;
+
 	public static String tableFlag = "0";
 
 	public HomeLayout() {
@@ -65,10 +66,8 @@ public class HomeLayout extends BorderPanel {
 		vertlayout.addComponent(createCVViewButton());
 		vertlayout.addComponent(createTimelineViewButton());
 		vertlayout.addComponent(createCaseButton());
-		//vertlayout.addComponent(createNewPatientButton());
 		vertlayout.addComponent(createNewDiagnosisButton());
 		vertlayout.addComponent(createPatientsRecordButton());
-		
 
 		forlayout.addComponent(vertlayout);
 		forlayout.setSizeFull();
@@ -201,26 +200,13 @@ public class HomeLayout extends BorderPanel {
 		return casebutton;
 	}
 
+	
 	/**
 	 * This method creates a button where the user can navigate to the view to
-	 * add a new patient to the database.
+	 * add a new Diagnosis to the database.
 	 * 
-	 * @return AddNewPatientButton
+	 * @return AddNewDiagnosisButton
 	 */
-
-	public Button createNewPatientButton() {
-		addnewpatientbutton = new Button("Add new Patient");
-		addnewpatientbutton.addClickListener(new Button.ClickListener() {
-			private static final long serialVersionUID = 1L;
-
-			public void buttonClick(ClickEvent event) {
-				// MyVaadinUI.setTimelineView(new TimelineView());
-				MyVaadinUI.setAddNewPatientView(new AddNewPatientView());
-			}
-
-		});
-		return addnewpatientbutton;
-	}
 
 	public Button createNewDiagnosisButton() {
 		addnewdiagnosisbutton = new Button("Add new Diagnosis");
@@ -235,6 +221,15 @@ public class HomeLayout extends BorderPanel {
 		});
 		return addnewdiagnosisbutton;
 	}
+
+	/**
+	 * This method creates a button where the user can navigate to the view to
+	 * see the AddNewPatientButton and the FindPatientButton. 
+	 * 
+	 * @return PatientsRecordButton; 
+	 */
+
+	
 	public Button createPatientsRecordButton() {
 		patientsrecordbutton = new Button("Patients record");
 		patientsrecordbutton.addClickListener(new Button.ClickListener() {
