@@ -72,7 +72,7 @@ public class FindCaseLayout extends BorderPanel implements
 		this.endDate = new TextField();
 		this.description = new TextField();
 
-		// Set all Textfields as required
+		// Set unneeded fields disabled until their used
 		this.doctorUID.setEnabled(false);
 		this.startDate.setEnabled(false);
 		this.endDate.setEnabled(false);
