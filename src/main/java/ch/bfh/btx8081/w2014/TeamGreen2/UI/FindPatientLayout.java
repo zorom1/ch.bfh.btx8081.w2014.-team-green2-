@@ -63,15 +63,7 @@ public class FindPatientLayout extends BorderPanel implements
 	private Button IndexButton2;
 	private Button IndexButton3;
 	private Button IndexButton4;
-	private String PID = null;
-	private String LASTNAME = null;
-	private String FIRSTNAME = null;
-	private String STREET = null;
-	private String CITY = null;
-	private String POSTCODE = null;
-	private String GENDER = null;
-	private String BIRTHDAY = null;
-	private String INSURANCE = null;	
+
 	
 	public FindPatientLayout() {
 		this.label = new Label("Find Patient");
