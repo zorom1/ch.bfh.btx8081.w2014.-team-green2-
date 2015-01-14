@@ -22,6 +22,11 @@ import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.BorderPanel;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
 
+/**
+ * The following class provides the Layout for the View of searching a existing case.
+ * The Information is read from the XML-File that was Created in CaseLayout.
+ */
+
 public class FindCaseLayout extends BorderPanel implements
 		StatePatternInterface {
 

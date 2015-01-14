@@ -37,7 +37,9 @@ import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
 
 /**
- *  Class for Layout of the Case User Interface
+ * The following class provides the Layout for the View of the Case.
+ * A new Case can be created, making sure that there are no overlapping PID's or CaseNumbers
+ * Further there's a Button that directs to the FindCaseLayout
  */
 
 

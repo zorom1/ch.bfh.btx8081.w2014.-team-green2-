@@ -1,5 +1,10 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.UI;
 
+/**
+ * The following class provides the Layout for the View of a New diagnosis.
+ * The saved diagnosis is written in an XML File
+ */
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -59,7 +64,9 @@ public class AddNewDiagnosisLayout extends BorderPanel implements
 	private String TREATMENT = null;
 	private String MEDICATION = null;
 
-	
+	/**
+	 * Creates the Layout of The Diagnosis GUI
+	 */
 	public AddNewDiagnosisLayout() {
 		this.label = new Label("Add new diagnosis");
 		this.label.setWidth(null);

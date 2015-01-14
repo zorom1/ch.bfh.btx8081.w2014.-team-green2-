@@ -1,5 +1,10 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.UI;
 
+/**
+ * The following class provides the Layout for the View of a New Patient.
+ * The saved diagnosis is written in an XML File
+ */
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
