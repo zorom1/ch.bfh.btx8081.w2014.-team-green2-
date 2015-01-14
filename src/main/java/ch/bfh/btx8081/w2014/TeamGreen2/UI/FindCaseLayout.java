@@ -1,5 +1,7 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.UI;
 
+import java.io.FileNotFoundException;
+
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.FormLayout;
@@ -14,6 +16,8 @@ import com.vaadin.ui.Button.ClickEvent;
 import ch.bfh.btx8081.w2014.TeamGreen2.Controller.FindFunctionAllCasesPID;
 import ch.bfh.btx8081.w2014.TeamGreen2.Controller.FindFunctionCaseNb;
 import ch.bfh.btx8081.w2014.TeamGreen2.Controller.StatePatternInterface;
+import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Allcases;
+import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Case;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.BorderPanel;
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
 import ch.bfh.btx8081.w2014.TeamGreen2.MHCPMS.MyVaadinUI;
@@ -41,9 +45,15 @@ public class FindCaseLayout extends BorderPanel implements
 	private Button IndexButton3;
 	private Button IndexButton4;
 	private Button IndexButton5;
-	private String MyCaseNb = null;
-	private String MyPID = null;
-
+	private String MyCaseNb;
+	private String MyPID;
+	public String myDoctor;
+    public String myDate1;
+    public String myDate2;
+    public String myDescr;
+    public String myCNb;
+    public String myPNb;
+    
 	public FindCaseLayout() {
 		this.label = new Label("Looking for patient's cases");
 		this.label.setWidth(null);
@@ -70,6 +80,7 @@ public class FindCaseLayout extends BorderPanel implements
 		this.panel.setSizeFull();
 		VerticalLayout vertlayout = new VerticalLayout();
 		FormLayout forlayout = new FormLayout();
+
 		vertlayout.addComponent(this.label);
 		vertlayout.setComponentAlignment(this.label, Alignment.TOP_CENTER);
 		vertlayout.addComponent(this.label1);
@@ -85,11 +96,17 @@ public class FindCaseLayout extends BorderPanel implements
 		vertlayout.addComponent(this.endDate);
 		vertlayout.addComponent(this.label6);
 		vertlayout.addComponent(this.description);
+
+		
+	
+	
+		
+
 		vertlayout.addComponent(createHomeViewButton());
-		vertlayout.addComponent(createCaseViewButton());
 		vertlayout.addComponent(createFindCaseButton());
 		vertlayout.addComponent(createFindAllCasesButton());
 		vertlayout.addComponent(createFindCaseNbButton());
+		vertlayout.addComponent(createCaseViewButton());
 		forlayout.addComponent(vertlayout);
 		forlayout.setSizeFull();
 		this.panel.setContent(forlayout);
@@ -129,7 +146,7 @@ public class FindCaseLayout extends BorderPanel implements
 	}
 
 	private Button createHomeViewButton() {
-		IndexButton2 = new Button("Home");
+		IndexButton2 = new Button("Edit");
 		IndexButton2.addStyleName("big");
 		IndexButton2.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID = 1L;
@@ -159,6 +176,7 @@ public class FindCaseLayout extends BorderPanel implements
 		return IndexButton4;
 	}
 
+
 	private Button createFindAllCasesButton() {
 		IndexButton5 = new Button("find all cases");
 		IndexButton5.addStyleName("big");
@@ -175,7 +193,6 @@ public class FindCaseLayout extends BorderPanel implements
 		});
 		return IndexButton5;
 	}
-
 	@Override
 	public void State1() {
 		MyVaadinUI.setCaseView(new CaseView());
@@ -185,7 +202,32 @@ public class FindCaseLayout extends BorderPanel implements
 	@Override
 	public void State2() {
 		// TODO Auto-generated method stub
-		MyVaadinUI.setHomeView(new HomeView());
+		//MyVaadinUI.setHomeView(new HomeView());
+		String myCNb=caseNb.getValue();
+	    String myPNb =patNb.getValue();
+	    String myDoctor=doctorUID.getValue();
+	    String myDate1=startDate.getValue();
+	    String myDate2=endDate.getValue();
+	    String myDescr=description.getValue();
+	    
+	    Case mycase = new Case(myCNb, myPNb, myDoctor, myDate1, myDate2, myDescr);
+	    Allcases.StatusC="Correct";
+	    try {
+			Allcases.makeSerial(mycase);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    /*changed data from cases.xml
+	     	     */
+	   // Allcases allcases = new Allcases();
+	    caseNb.setValue(Allcases.FoundCaseNb);  
+	    patNb.setValue(Allcases.FoundPatNb);
+	    doctorUID.setValue(Allcases.FoundDoctorUID);
+	    startDate.setValue(Allcases.FoundStartDate);
+	    endDate.setValue(Allcases.FoundEndDate);
+	    description.setValue(Allcases.FoundDescription);
+	  
 	}
 
 	@Override
@@ -215,4 +257,5 @@ public class FindCaseLayout extends BorderPanel implements
 		MyVaadinUI.setFindCasePIDView(new FindCasePIDView());
 
 	}
+
 }
