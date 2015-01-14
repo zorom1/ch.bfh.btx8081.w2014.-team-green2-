@@ -130,7 +130,7 @@ public class FindCaseLayout extends BorderPanel implements
 	}
 
 	private Button createFindCaseButton() {
-		IndexButton3 = new Button("LookForCase");
+		IndexButton3 = new Button("How can I search?");
 		IndexButton3.addStyleName("big");
 		IndexButton3.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID = 1L;
@@ -138,7 +138,7 @@ public class FindCaseLayout extends BorderPanel implements
 			public void buttonClick(ClickEvent event) {
 
 				Notification
-						.show("insert a case Nb and press: 'Find case Nb' Button or insert a PID Nb and press 'Find all cases to PID' Button");
+						.show("Insert a case Nb and press: 'Find case Nb' Button or insert a PID Nb and press 'Find all cases to PID' Button");
 			}
 		});
 
@@ -161,7 +161,7 @@ public class FindCaseLayout extends BorderPanel implements
 	}
 
 	private Button createFindCaseNbButton() {
-		IndexButton4 = new Button("find Case Nb");
+		IndexButton4 = new Button("Find case Nb");
 		IndexButton4.addStyleName("big");
 		IndexButton4.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID = 1L;
@@ -178,7 +178,7 @@ public class FindCaseLayout extends BorderPanel implements
 	}
 
 	private Button createFindAllCasesButton() {
-		IndexButton5 = new Button("find all cases");
+		IndexButton5 = new Button("Find all cases");
 		IndexButton5.addStyleName("big");
 		IndexButton5.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID = 1L;
@@ -239,16 +239,16 @@ public class FindCaseLayout extends BorderPanel implements
 		MyCaseNb = caseNb.getValue();
 		MyPID = patNb.getValue();
 		if (MyCaseNb == "") {
-			Notification.show("No Case Nb is found");
+			Notification.show("No case Nb is found!");
 		} else {
 			FindFunctionCaseNb findFunctionCasesNb = new FindFunctionCaseNb();
 			findFunctionCasesNb.CheckFound(MyCaseNb, MyPID);
 			if (findFunctionCasesNb.FoundDoctorUID == null) {
-				Notification.show("No Case Nb is found");
+				Notification.show("No case Nb is found!");
 			}
 			// {
 			else {
-				Notification.show("Case is found");
+				Notification.show("Case is found!");
 			}
 
 			caseNb.setValue(findFunctionCasesNb.FoundCaseNb);
