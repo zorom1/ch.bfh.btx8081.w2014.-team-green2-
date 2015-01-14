@@ -11,6 +11,7 @@ import ch.bfh.btx8081.w2014.TeamGreen2.Database_XML.Patient;
 
 
 
+
 import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
@@ -70,7 +71,8 @@ public class AddNewPatientLayout extends BorderPanel implements
 	private String POSTCODE = null;
 	private String GENDER = null;
 	private String BIRTHDAY = null;
-	private String INSURANCE = null;	
+	private String INSURANCE = null;
+	private String currentPIDNb;
 	
 	public AddNewPatientLayout() {
 		this.label = new Label("Add new patient");
@@ -222,7 +224,8 @@ public class AddNewPatientLayout extends BorderPanel implements
 		BIRTHDAY = birthday.getValue();
 		INSURANCE = insurance.getValue();
 		Address address = new Address(STREET, CITY, POSTCODE);
-System.out.println("Address="+address.getCity()+address.getStreet()+address.getPcode());
+//System.out.println("Address="+address.getCity()+address.getStreet()+address.getPcode());
+		if(PID.compareTo(currentPIDNb)==0){
 		Patient newpatient = new Patient(PID, LASTNAME, FIRSTNAME, address,
 				GENDER, BIRTHDAY, INSURANCE);
 		try {
@@ -232,7 +235,10 @@ System.out.println("Address="+address.getCity()+address.getStreet()+address.getP
 			e.printStackTrace();
 		}
 		Notification.show("Done");
-
+		}
+		else {
+			Notification.show("PID is not correct, please try again");
+		}
 	}
 
 	@Override
@@ -265,6 +271,7 @@ System.out.println("Address="+address.getCity()+address.getStreet()+address.getP
 		lastNumber="p"+"0"+numb;	
 		}
 		patId.setValue(lastNumber);
+		currentPIDNb=lastNumber;
 		in.close();
 		PrintWriter out= new PrintWriter("lastpatient.txt");
 		out.println(lastNumber);
