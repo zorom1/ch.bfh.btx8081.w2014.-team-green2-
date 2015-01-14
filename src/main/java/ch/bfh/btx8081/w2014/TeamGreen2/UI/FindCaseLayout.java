@@ -8,7 +8,7 @@ import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Panel;
-//import com.vaadin.ui.Table;
+import com.vaadin.ui.Table;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
@@ -100,8 +100,6 @@ public class FindCaseLayout extends BorderPanel implements
 		vertlayout.addComponent(this.description);
 
 		
-	
-	
 		
 		vertlayout.addComponent(createFindCaseNbButton());
 		vertlayout.addComponent(createFindCaseButton());
