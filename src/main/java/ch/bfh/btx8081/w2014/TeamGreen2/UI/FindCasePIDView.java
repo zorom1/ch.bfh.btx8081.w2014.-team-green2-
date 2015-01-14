@@ -1,6 +1,8 @@
 /**
+ * The following class provides the methods that the Layout is added to the View
+ * of the application and can be switched to another View.
+ * 
  * @author Manuel
- *
  */
 package ch.bfh.btx8081.w2014.TeamGreen2.UI;
 

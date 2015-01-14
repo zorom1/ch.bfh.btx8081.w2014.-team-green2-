@@ -4,6 +4,11 @@ package ch.bfh.btx8081.w2014.TeamGreen2.UI;
  * on the screen are 5 buttons
 @author team green  */
 
+/**
+ * The following class provides the methods that the Layout is added to the View
+ * of the application and can be switched to another View.
+ *
+ */
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;

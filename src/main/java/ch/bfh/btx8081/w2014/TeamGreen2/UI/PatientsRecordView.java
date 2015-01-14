@@ -4,6 +4,12 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.VerticalLayout;
 
+/**
+ * The following class provides the methods that the Layout is added to the View
+ * of the application and can be switched to another View.
+ * 
+ *
+ */
 
 public class PatientsRecordView extends VerticalLayout implements View{
 		

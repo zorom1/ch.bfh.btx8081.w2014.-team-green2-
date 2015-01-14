@@ -1,5 +1,11 @@
 package ch.bfh.btx8081.w2014.TeamGreen2.UI;
 
+/**
+ * The following class provides the methods that the Layout is added to the View
+ * of the application and can be switched to another View.
+ * 
+ *
+ */
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Alignment;
