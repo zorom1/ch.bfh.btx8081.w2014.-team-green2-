@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 
 import ch.bfh.btx8081.w2014.TeamGreen2.HomeView.HomeView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.AddNewPatientView;
+import ch.bfh.btx8081.w2014.TeamGreen2.UI.CVSwitchView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.CVView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.CaseView;
 import ch.bfh.btx8081.w2014.TeamGreen2.UI.FindCasePIDView;
@@ -100,6 +101,12 @@ public class MyVaadinUI extends UI
     	findpatientview.setImmediate(true);
     	navigator.addView("FindPatientView", findpatientview);
     	navigator.navigateTo("FindPatientView");
+    } 
+    
+    public static void setCVSwitchView (CVSwitchView setCVSwitchView){
+    	setCVSwitchView.setImmediate(true);
+    	navigator.addView("CVSwitchView", setCVSwitchView);
+    	navigator.navigateTo("CVSwitchView");
     } 
     
 }
