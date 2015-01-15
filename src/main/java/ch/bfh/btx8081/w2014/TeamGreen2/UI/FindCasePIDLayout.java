@@ -46,12 +46,12 @@ public class FindCasePIDLayout extends BorderPanel implements
 
 		// Define the columns for the built-in container
 
-		table.addContainerProperty("Case Nb ", String.class, null);
-		table.addContainerProperty(" Patient ", String.class, null);
-		table.addContainerProperty(" PID Doctor ", String.class, null);
-		table.addContainerProperty(" Start Date ", String.class, null);
-		table.addContainerProperty(" End Date ", String.class, null);
-		table.addContainerProperty(" Description ", String.class, null);
+		table.addContainerProperty("Case Nb", String.class, null);
+		table.addContainerProperty("PID Patient", String.class, null);
+		table.addContainerProperty("PID Doctor", String.class, null);
+		table.addContainerProperty("Start Date", String.class, null);
+		table.addContainerProperty("End Date", String.class, null);
+		table.addContainerProperty("Description", String.class, null);
 		String[] temp_element = new String[6];
 		int i = 0;
 		int line = 1;
